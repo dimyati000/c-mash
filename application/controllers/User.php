@@ -32,14 +32,22 @@ class User extends CI_Controller {
 	public function tambahKeranjang($idBarang)
     {
         $barang = $this->ModelBarang->find($idBarang);
+				$qty = $this->input->post("qty");
 
         $data = array(
             'id' 	   => $barang->idBarang,
-            'qty'      => 1,
+            'qty'      => $qty,
             'price'    => $barang->harga,
             'name'     => $barang->namaBarang
         );
         $this->cart->insert($data);
+				
+				// $jumlah= $barang->stok-$qty;
+				// $dataupdate = array(
+				// 	'stok'      => $jumlah,
+				// );
+				// $this->db->where($idBarang);
+				// $this->db->update("tb_product", $dataupdate);
         redirect('../User');
     }
 	// data detail keranjang

@@ -21,7 +21,9 @@
 		<div class="main-wrapper container">
 			<div class="navbar-bg"></div>
 			<nav class="navbar navbar-expand-lg main-navbar">
-				<a href="<?php echo base_url('/') ?>" class="navbar-brand sidebar-gone-hide">Bengkel Online</a>
+				<a href="<?php echo base_url('/') ?>" class="navbar-brand sidebar-gone-hide">									
+				<img src="<?php echo base_url('/assets/img/bengkel1.png') ?>"  width="100%" height="50px" alt>
+		</a>
 
 				<form class="form-inline ml-auto">
 
@@ -51,13 +53,12 @@
 					<?php } else { ?>
 						<li><?php echo anchor('auth/login', '<div class="btn btn-md-3 btn-success ml-5">Login</div>') ?></li>
 					<?php } ?>
-
 				</ul>
 			</nav>
 
 			<nav class="navbar navbar-secondary navbar-expand-lg">
 				<div class="container">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav navbar-right">
 						<!-- <li class="nav-item active"> -->
 						<li class="nav-item">
 							<a href="<?php echo base_url('Home') ?>" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>

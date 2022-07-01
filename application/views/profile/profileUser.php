@@ -18,8 +18,8 @@
           <div class="row mt-sm-4">
               <div class="col-12 col-md-12 col-lg-4">
                 <div class="card">
-                  <form method="post" class="needs-validation" novalidate="">
-                    <div class="card-header">
+                <form action="<?php echo base_url() . 'Profile/update_akun' ?>" method="post" class="needs-validation" novalidate="">
+                <input name="idUser" type="hidden" class="form-control" value="<?= $this->session->userdata('idUser'); ?> " required="">                    <div class="card-header">
                       <h4>Data Akun</h4>
                     </div>
                     <div class="card-body">
@@ -31,7 +31,7 @@
                             <i class="fas fa-user"></i>
                           </div>
                         </div>
-                        <input type="text" class="form-control" value="<?= $user['username'] ?>" required>
+                        <input name="username" type="text" class="form-control" value="<?= $user['username'] ?>" required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -42,7 +42,7 @@
                             <i class="fas fa-envelope"></i>
                           </div>
                         </div>
-                        <input type="text" class="form-control" value="<?= $user['email'] ?>" required>
+                        <input name="email" type="text" class="form-control" value="<?= $user['email'] ?>" required>
                       </div>
                     </div>
                     </div>

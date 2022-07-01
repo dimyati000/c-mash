@@ -54,6 +54,8 @@
                                             Login
                                         </button>
                                         <div class="mt-5 text-muted text-center">
+                                            <a href="<?php echo base_url('Home') ?>">Home</a>
+                                            |
                                             Belum Punya Akun ? <a href="<?php echo base_url('Register') ?>">Buat Disini</a>
                                         </div>
                                     </div>

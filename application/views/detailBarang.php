@@ -17,6 +17,7 @@
                                 <img src="<?php echo base_url(). '/uploads/'. $brg->gambar?>" alt="" class="card-img-top">
                             </div>
                             <div class="col-md-8">
+                            <form action="<?php echo base_url() . 'User/tambahKeranjang/'. $brg->idBarang ?>" method="post" class="needs-validation" novalidate="">
                                 <table class="table">
                                     <tr>
                                         <td>Nama Produk</td>
@@ -38,9 +39,14 @@
                                         <td>Harga</td>
                                         <td><strong><div class="btn btn-sm btn-success">Rp <?php echo number_format($brg->harga, 0, ',', '.')?></div></strong></td>
                                     </tr>
-                                </table>
-                                <?php echo anchor('User/tambahKeranjang/'. $brg->idBarang, '<div class="btn btn-md btn-primary">Add Cart</div>')?>
+                                    <tr>
+                                        <td>Jumlah</td>
+                                        <td><input value="1" name="qty" type="number" class="form-control"  required></td>
+                                    </tr>
+                                </table>  
+                                <button type="submit" class="btn btn-primary">Add Cart</button>                                 
                                 <?php echo anchor('../User', '<div class="btn btn-md btn-warning">Kembali</div>')?>
+                                </form>
                             </div>
                         </div>
                         <?php endforeach;?>

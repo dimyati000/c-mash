@@ -15,6 +15,7 @@ class Snap extends CI_Controller
 	{
 		$id_user = $this->session->userdata('idUser');
 		$data['user'] = $this->ModelProfile->get_byId($id_user)->row_array();
+		$idInvoice = $this->input->get("idInvoice");
 		$this->load->view("layout/template");
 		$this->load->view('checkout_snap', $data);
 	}

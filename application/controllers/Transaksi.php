@@ -36,11 +36,13 @@ class Transaksi extends CI_Controller
 	// tampilkan detail invoice
     public function detailview($idInvoice)
     {
+
         $data['invoice'] = $this->ModelTransaksi->takeIdInvoices($idInvoice);
         $data['pesanan'] = $this->ModelTransaksi->takeIdPesanan($idInvoice);
         $this->load->view("admin/detailInvoicecetak", $data);
     }
 
+    
 	// delete invoice
 	public function delete($idInvoice)
     {

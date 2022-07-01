@@ -29,19 +29,7 @@ class Profile extends CI_Controller {
       $this->load->view("profile/profileUser", $data);
     }  
   }
-  // edit data profil
-	public function edit($idMotor)
-	{
-		$where = array('idMotor' => $idMotor);
-        $data['motor'] = $this->ModelProfile->editTentang($where, 'tb_tentang')->result();
-        $this->load->view('layout/templateAdmin');
-        $this->load->view('profile/EditprofileUser', $data);
-
-    $response['success'] = TRUE;
-    $response['message'] = "Data Profil berhasil Diperbarui!";
-    echo json_encode($response);	
-	}
-
+ 
   // update data kendaraan
 	public function update_kendaraan()
 	{
@@ -63,6 +51,30 @@ class Profile extends CI_Controller {
 		$this->ModelProfile->updateKendaraan($where, $data, 'tb_user');
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
            <strong>Data Kendaraan Berhasil Di Update !</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>');
+		redirect("../Profile");
+	}
+
+  // update data akun
+	public function update_akun()
+	{
+		$idUser = $this->input->post("idUser");
+		$userName = $this->input->post("username");
+		$email = $this->input->post("email");
+
+		$data = array(
+			'username' => $userName,
+			'email'   => $email,
+		);
+		$where = array(
+			'idUser' => $idUser
+		);
+		$this->ModelProfile->updateDiri($where, $data, 'tb_user');
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Data Akun Berhasil Di Update !</strong>
            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -107,26 +119,6 @@ class Profile extends CI_Controller {
 		redirect("../Profile");
 	}
 
-  function update_profile() {
-    $id = $this->input->post('id_user');
-    $nama_user = $this->input->post("nama_user");
-
-    date_default_timezone_set('Asia/Jakarta');
-    $object = array( 
-      'nama' => $nama_user, 
-    );
-    $this->db->where('id', $id);
-    $this->db->update('users', $object);
-
-    $ses_array = array(
-      'auth_nama_user' => $nama_user,
-    );
-    $this->session->set_userdata( $ses_array );
-    
-    $response['success'] = TRUE;
-    $response['message'] = "Data Profil berhasil Diperbarui!";
-    echo json_encode($response);	
-  }
 }
 
 /* End of file Profile.php */

@@ -1,53 +1,32 @@
-<title>Detail Pemesanan</title>
-<div class="main-content">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="card shadow-lg border-0 rounded-lg mt-5">
-				<section class="section">
-					<div class="section-header">
-						<h1>Detail Pemesanan</h1>
-						<div class="btn btn-sm btn-success">No Invoice : <?php echo $invoice->idInvoice ?></div>
-					</div>
+<title>Detail Invoice</title>
+
+<div class="main-wrapper">
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section ">
+          <div class="section-header">
+            <h1>Detail Pemesanan</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item active"><a href="<?= site_url('Transaksi') ?>">Transaksi</a></div>
+              <div class="breadcrumb-item">Detail Pemesanan</div>
+            </div>
+          </div>
 					<div class="section-body">
-						<div class="container-fluid">
-							<!-- Ambil Data Detail Invoice -->
-							<table class="table table-striped table-bordered table-hover">
-								<a href="<?php echo site_url() . 'Transaksi/detailview/' . $invoice->idInvoice ?>" class="btn btn-primary">Print</a>
-								<tr>
-									<th>Id Produk</th>
-									<th>Nama Produk</th>
-									<th>Jumlah Pesanan</th>
-									<th>Harga Per Item</th>
-									<th>Sub-Total</th>
-								</tr>
-								<?php
-								$total = 0;
-								foreach ($pesanan as $psn) :
-									$subtotal = $psn->jumlah * $psn->harga;
-									$total += $subtotal;
-								?>
-									<tr>
-										<td><?php echo $psn->idBarang ?></td>
-										<td><?php echo $psn->namaBarang ?></td>
-										<td><?php echo $psn->jumlah ?></td>
-										<td><?php echo number_format($psn->harga, 0, ',', '.') ?></td>
-										<td><?php echo number_format($subtotal, 0, ',', '.') ?></td>
-									</tr>
-								<?php endforeach; ?>
-								<tr>
-									<td colspan="4" align="right">Grand Total</td>
-									<td align="right">Rp. <?php echo number_format($total, 0, ',', '.') ?></td>
-								</tr>
-							</table>
-							<a href="<?php echo base_url('Transaksi') ?>">
-								<div class="btn btn-sm btn-warning">Kembali</div>
-							</a>
-							<br>
-							<br>
+						<div class="row justify-content-center">
+              <div class="col-12 col-md-12 col-lg-6">
+                <div class="card">
+								<iframe src="<?php echo site_url() . '/Transaksi/detailview/' . $invoice->idInvoice ?>" style="width:100%; height:300px;"></iframe> 
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
 			</div>
-		</div>
-	</div>
-</div>
+    </div>
+		<footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2022 Bengkel Online. All rights reserved.
+        </div>
+      </footer>
+  </div>
