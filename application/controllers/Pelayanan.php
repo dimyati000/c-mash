@@ -32,23 +32,25 @@
             $this->load->view('layout/footerTemplate');
             $this->load->view('pelReg', $data);
         }
+
 		// Tambah Data Kedua Layanan
         public function tambahLayanan()
         {
 			$namaPelanggan = $this->input->post("namaPelanggan");
 			$noWA = $this->input->post("noWA");
-			$jenisService = $this->input->post("jenisService");
+			// $jenisService = $this->input->post("jenisService");
 			$kilometer = $this->input->post("kilometer");
             $alamat = $this->input->post("alamat");
-            $provinsi = $this->input->post("provinsi");
+            // $provinsi = $this->input->post("provinsi");
             $kota = $this->input->post("kota");
             $kecamatan = $this->input->post("kecamatan");
             $desa = $this->input->post("desa");
             $dusun = $this->input->post("dusun");
             $tipeKendaraan = $this->input->post("tipeKendaraan");
             $jenisLayanan = $this->input->post("jenisLayanan");
-            $merk = $this->input->post("merk");
-            $seri = $this->input->post("seri");
+            $merk = $this->input->post("merkKendaraan");
+            $nama = $this->input->post("namaKendaraan");
+            // $seri = $this->input->post("seri");
             $warna = $this->input->post("warna");
             $transmisi = $this->input->post("transmisi");
             $jenisBensin = $this->input->post("bensin");
@@ -60,18 +62,19 @@
             $data = array(
 				'namaPelanggan' => $namaPelanggan,
 				'noWA' => $noWA,
-				'jenisService' => $jenisService,
+				// 'jenisService' => $jenisService,
 				'kilometer' => $kilometer,
                 'alamat' => $alamat,
-                'provinsi' => $provinsi,
+                // 'provinsi' => $provinsi,
                 'kota' => $kota,
                 'kecamatan' => $kecamatan,
                 'desa' => $desa,
                 'dusun' => $dusun,
                 'tipeKendaraan' => $tipeKendaraan,
-                'jenisLayanan' => $jenisLayanan ,
-                'merk' => $merk, 
-                'seri' => $seri,
+                'jenisLayanan' => $jenisLayanan,
+                'merkKendaraan' => $merk, 
+                'namaKendaraan' => $nama, 
+                // 'seri' => $seri,
                 'warna' => $warna,
                 'transmisi' => $transmisi ,
                 'jenisBensin' => $jenisBensin,
@@ -82,6 +85,73 @@
 				'verifikasi' => $verifikasi
             );
             $this->ModelService->tambahLayanan($data, 'tb_layanan');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Home Servise Berhasil Di Kirim !</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>');
+            redirect('../Home');
+        }
+
+        // Tambah Data Layanan Bengkel
+        public function tambahLayananBengkel()
+        {
+			$namaPelanggan = $this->input->post("namaPelanggan");
+			$noWA = $this->input->post("noWA");
+			// $jenisService = $this->input->post("jenisService");
+			$kilometer = $this->input->post("kilometer");
+            $alamat = $this->input->post("alamat");
+            // $provinsi = $this->input->post("provinsi");
+            // $kota = $this->input->post("kota");
+            // $kecamatan = $this->input->post("kecamatan");
+            // $desa = $this->input->post("desa");
+            // $dusun = $this->input->post("dusun");
+            $tipeKendaraan = $this->input->post("tipeKendaraan");
+            $jenisLayanan = $this->input->post("jenisLayanan");
+            $merk = $this->input->post("merkKendaraan");
+            $nama = $this->input->post("namaKendaraan");
+            // $seri = $this->input->post("seri");
+            $warna = $this->input->post("warna");
+            $transmisi = $this->input->post("transmisi");
+            $jenisBensin = $this->input->post("bensin");
+            $platNomor = $this->input->post("platNomor");
+			$jadwalBooking = $this->input->post("jadwalBooking");
+            $jenisKendala = $this->input->post("jenisKendala");
+			$verifikasi = $this->input->post("verifikasi");
+			
+            $data = array(
+				'namaPelanggan' => $namaPelanggan,
+				'noWA' => $noWA,
+				// 'jenisService' => $jenisService,
+				'kilometer' => $kilometer,
+                'alamat' => $alamat,
+                // 'provinsi' => $provinsi,
+                // 'kota' => $kota,
+                // 'kecamatan' => $kecamatan,
+                // 'desa' => $desa,
+                // 'dusun' => $dusun,
+                'tipeKendaraan' => $tipeKendaraan,
+                'jenisLayanan' => $jenisLayanan,
+                'merkKendaraan' => $merk, 
+                'namaKendaraan' => $nama, 
+                // 'seri' => $seri,
+                'warna' => $warna,
+                'transmisi' => $transmisi ,
+                'jenisBensin' => $jenisBensin,
+                'platNomor' => $platNomor,
+                'jenisKendala' => $jenisKendala,
+				'jadwalBooking' => $jadwalBooking,
+                'tanggalPemesanan' => date('Y-m-d'),
+				'verifikasi' => $verifikasi
+            );
+            $this->ModelService->tambahLayanan($data, 'tb_layanan');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Servise Dibengkel Berhasil Di Kirim !</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>');
             redirect('../Home');
         }
     }

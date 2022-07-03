@@ -3,7 +3,7 @@ class ModelService extends CI_Model
 {
     public function showDataReg()
     {
-        return $this->db->get_where("tb_layanan", array('jenisLayanan' => 'Ditempat'));
+        return $this->db->get_where("tb_layanan", array('jenisLayanan' => 'ServiceDibengkel'));
         //    return $this->db->get("tb_layanan");
     }
     public function showDataBooking()
@@ -11,7 +11,7 @@ class ModelService extends CI_Model
         return $this->db->get_where(
             "tb_layanan",
             array(
-                'jenisLayanan' => 'reguler',
+                'jenisLayanan' => 'HomeService',
             )
         );
         //    return $this->db->get("tb_layanan");

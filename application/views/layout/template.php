@@ -80,7 +80,7 @@
 			<div class="main-sidebar">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="<?php echo base_url('/') ?>">Bengkel Online</a>
+						<a href="<?php echo base_url('/') ?>">C-Mash</a>
 					</div>
 					<!-- <div class="sidebar-brand sidebar-brand-sm">
 						<a href="index.html">BAM</a>

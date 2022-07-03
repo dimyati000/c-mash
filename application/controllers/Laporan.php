@@ -8,12 +8,50 @@ class Laporan extends CI_Controller{
 			$this->load->model('ModelBarang');
 	}
 
-    public function index()
+    public function laporan_pelayanan()
     {
-        $data['laporan'] = $this->ModelLaporan->showData()->result();
+        $tanggal_awal = $this->input->get("tanggal_awal");
+        $tanggal_akhir = $this->input->get("tanggal_akhir");
+        $filter = array(
+            'jenis_layanan' => $this->input->get('jenis_layanan'),
+            'tanggal_awal' => format_date($tanggal_awal, 'Y-m-d'),
+            'tanggal_akhir' => format_date($tanggal_akhir, 'Y-m-d'),
+        );
+        $data['laporan'] = $this->ModelLaporan->laporanDataPelayanan($filter)->result();
         $this->load->view("layout/templateAdmin");
-        $this->load->view("admin/laporan", $data);
+        $this->load->view("laporan/laporan_pelayanan", $data);
     }
+
+    public function laporan_penjualan()
+    {
+        $data['invoice'] = $this->ModelLaporan->showDataPenjualan()->result();
+        $this->load->view("layout/templateAdmin");
+        $this->load->view("laporan/laporan_penjualan", $data);
+    }
+
+    //cetak laporan
+    public function cetak_laporan_pelayanan() {
+        $tanggal_awal = $this->input->get("tanggal_awal");
+        $tanggal_akhir = $this->input->get("tanggal_akhir");
+        $filter = array(
+            'jenis_layanan' => $this->input->get('jenis_layanan'),
+            'tanggal_awal' => format_date($tanggal_awal, 'Y-m-d'),
+            'tanggal_akhir' => format_date($tanggal_akhir, 'Y-m-d'),
+        );
+
+        $data['laporan'] = $this->ModelLaporan->laporanDataPelayanan($filter)->result();
+        $data['tanggal_awal'] = $tanggal_awal;
+        $data['tanggal_akhir'] = $tanggal_akhir;
+        $data['title'] = "Laporan Penjualan"; 
+
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Laporan Penjualan.pdf";
+        $this->pdf->load_view('laporan/cetak_laporan_pelayanan.php', $data);
+    }
+
+
+
 	// Tambah data laporan
     public function tambahData()
     {

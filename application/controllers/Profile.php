@@ -58,6 +58,56 @@ class Profile extends CI_Controller {
 		redirect("../Profile");
 	}
 
+  // update data akun admin
+	public function update_akun_admin()
+	{
+		$idUser = $this->input->post("idUser");
+		$userName = $this->input->post("username");
+		$email = $this->input->post("email");
+
+		$data = array(
+			'username' => $userName,
+			'email'   => $email,
+		);
+		$where = array(
+			'idUser' => $idUser
+		);
+		$this->ModelProfile->updateDiri($where, $data, 'tb_user');
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Data Akun Berhasil Di Update !</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>');
+		redirect("../Profile");
+	}
+
+  // update data diri admin
+	public function update_diri_admin()
+	{
+		$idUser = $this->input->post("idUser");
+		$namaUser = $this->input->post("nama_User");
+		$noTelp = $this->input->post("no_Telp");
+		$alamat = $this->input->post("alamat");
+
+		$data = array(
+			'namaUser' => $namaUser,
+			'noTelp'   => $noTelp,
+			'alamat'   => $alamat,
+		);
+		$where = array(
+			'idUser' => $idUser
+		);
+		$this->ModelProfile->updateDiri($where, $data, 'tb_user');
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+           <strong>Data Diri Berhasil Di Update !</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>');
+		redirect("../Profile");
+	}
+
   // update data akun
 	public function update_akun()
 	{

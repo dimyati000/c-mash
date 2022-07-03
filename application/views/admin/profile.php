@@ -111,7 +111,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2022 Bengkel Online. All rights reserved.
+          Copyright &copy; 2022 C-Mash. All rights reserved.
         </div>
       </footer>
       <!-- <footer class="main-footer">

@@ -62,7 +62,7 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="<?php echo base_url('/') ?>">BENGKEL ONLINE</a>
+            <a href="<?php echo base_url('/') ?>">C-Mash</a>
           </div>
           <!-- <div class="sidebar-brand sidebar-brand-sm">
             <a href="<?php echo base_url('/') ?>">BAM</a>
@@ -77,7 +77,7 @@
                 <li><a class="nav-link" href="<?php echo base_url('DataBarang') ?>">Spare Part </a></li>
                 <li><a class="nav-link" href="<?php echo base_url('Transaksi')?>">Transaksi</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('Pesan')?>">Penjadwalan</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('Laporan')?>">Laporan</a></li>
+                <!-- <li><a class="nav-link" href="<?php echo base_url('Laporan')?>">Laporan</a></li> -->
                 <li><a class="nav-link" href="<?php echo base_url('Service/BookingService')?>">Verifikasi Booking</a></li>
               </ul>
             </li>
@@ -86,6 +86,13 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url('Kasir')?>">Menu Kasir</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('Kasir/data')?>">Data Kasir</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file"></i> <span>Laporan</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="<?php echo base_url('Laporan/laporan_pelayanan')?>">Laporan Pelayanan</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('Laporan/laporan_penjualan')?>">Laporan Penjualan</a></li>
               </ul>
             </li>
             <li><a href="<?php echo base_url() . 'Tentang'?>"><i class="fas fa-cog"></i><span>Setting</span></a></li>

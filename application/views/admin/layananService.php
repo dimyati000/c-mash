@@ -1,11 +1,11 @@
-<title>Data Layanan</title>
+<title>Data Layanan Service</title>
 <div class="main-content">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="card shadow-lg border-0 rounded-lg mt-5">
 				<section class="section">
 					<div class="section-header">
-						<h1>Data Layanan</h1>
+						<h1>Data Layanan Service</h1>
 					</div>
 					<div class="section-body">
 						<div class="container-fluid">

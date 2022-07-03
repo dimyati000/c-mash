@@ -1,3 +1,5 @@
+<title>Profile</title>
+
 <body>
     <div class="main-wrapper">
       <!-- Main Content -->
@@ -19,7 +21,7 @@
               <div class="col-12 col-md-12 col-lg-4">
                 <div class="card">
                 <form action="<?php echo base_url() . 'Profile/update_akun' ?>" method="post" class="needs-validation" novalidate="">
-                <input name="idUser" type="hidden" class="form-control" value="<?= $this->session->userdata('idUser'); ?> " required="">                    <div class="card-header">
+                  <input name="idUser" type="hidden" class="form-control" value="<?= $this->session->userdata('idUser'); ?> " required="">                    <div class="card-header">
                       <h4>Data Akun</h4>
                     </div>
                     <div class="card-body">
@@ -49,61 +51,60 @@
                     <div class="card-footer text-right">
                       <button class="btn btn-success">Simpan Data Akun</button>
                     </div>
-                  </form>
+                </form>
                 </div>
               </div>
               <div class="col-12 col-md-12 col-lg-4">
                 <div class="card">
-                <form action="<?php echo base_url() . 'Profile/update_diri' ?>" method="post" class="needs-validation" novalidate="">
-                <input name="idUser" type="hidden" class="form-control" value="<?= $this->session->userdata('idUser'); ?> " required="">
-                    <div class="card-header">
-                      <h4>Data Diri</h4>
-                    </div>
-                    <div class="card-body">
+                  <form action="<?php echo base_url() . 'Profile/update_diri' ?>" method="post" class="needs-validation" novalidate="">
+                    <input name="idUser" type="hidden" class="form-control" value="<?= $this->session->userdata('idUser'); ?> " required="">
+                      <div class="card-header">
+                        <h4>Data Diri</h4>
+                      </div>
+                      <div class="card-body">
+                            <div class="form-group">
+                              <label>Nama Lengkap</label>
+                              <input name="nama_User" type="text" class="form-control" value="<?= $user['namaUser'] ?>" required="">
+                              
+                            </div>
                           <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input name="nama_User" type="text" class="form-control" value="<?= $user['namaUser'] ?>" required="">
+                              <label>Telephone</label>
+                              <input name="no_Telp" type="tel" class="form-control" value="<?= $user['noTelp'] ?>" required="">
+                              
+                          </div>
+                          <div class="form-group">
+                              <label>Alamat</label>
+                              <textarea name="alamat" class="form-control summernote-simple"><?= $user['alamat'] ?></textarea>
                             
                           </div>
-                        <div class="form-group">
-                            <label>Telephone</label>
-                            <input name="no_Telp" type="tel" class="form-control" value="<?= $user['noTelp'] ?>" required="">
+                          <!-- <div class="form-group">
+                              <label>Provinsi</label>
+                              <input name="provinsi" type="tel" class="form-control" value="<?= $user['provinsi'] ?>" required="">
+                          </div> -->
+                          <div class="form-group">
+                            <label>Kota</label>
+                            <input name="kota" type="tel" class="form-control" value="<?= $user['kota'] ?>" required="">
                             
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea name="alamat" class="form-control summernote-simple"><?= $user['alamat'] ?></textarea>
-                           
-                        </div>
-                        <div class="form-group">
-                            <label>Provinsi</label>
-                            <input name="provinsi" type="tel" class="form-control" value="<?= $user['provinsi'] ?>" required="">
-                           
-                        </div>
-                        <div class="form-group">
-                          <label>Kota</label>
-                          <input name="kota" type="tel" class="form-control" value="<?= $user['kota'] ?>" required="">
-                          
-                        </div>
-                        <div class="form-group">
-                            <label>Kecamatan</label>
-                            <input name="kecamatan" type="tel" class="form-control" value="<?= $user['kecamatan'] ?>" required="">
-                           
-                        </div>
-                        <div class="form-group">
-                            <label>Desa</label>
-                            <input name="desa" type="tel" class="form-control" value="<?= $user['desa'] ?>" required="">
-                           
-                        </div>
-                        <div class="form-group">
-                            <label>Dusun</label>
-                            <input name="dusun" type="tel" class="form-control" value="<?= $user['dusun'] ?>" required="">
-                           
-                        </div>
-                    </div>
-                    <div class="card-footer text-right">
-                    <button class="btn btn-success">Simpan Data Diri</button>
-                    </div>
+                          </div>
+                          <div class="form-group">
+                              <label>Kecamatan</label>
+                              <input name="kecamatan" type="tel" class="form-control" value="<?= $user['kecamatan'] ?>" required="">
+                            
+                          </div>
+                          <div class="form-group">
+                              <label>Desa</label>
+                              <input name="desa" type="tel" class="form-control" value="<?= $user['desa'] ?>" required="">
+                            
+                          </div>
+                          <div class="form-group">
+                              <label>Dusun</label>
+                              <input name="dusun" type="tel" class="form-control" value="<?= $user['dusun'] ?>" required="">
+                            
+                          </div>
+                      </div>
+                      <div class="card-footer text-right">
+                      <button class="btn btn-success">Simpan Data Diri</button>
+                      </div>
                   </form>
                 </div>
               </div>
@@ -144,7 +145,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2022 Bengkel Online. All rights reserved.
+          Copyright &copy; 2022 C-Mash. All rights reserved.
         </div>
       </footer>
       <!-- <footer class="main-footer">
@@ -157,149 +158,3 @@
       </footer> -->
     </div>
   </div>
- 
-<script>
-function openModalFoto() {
-  $('#modal-foto').modal('show');
-}
-
-$('#form-password').submit(function(event) {
-  event.preventDefault();
-  var id_user = $('#id_user').val();
-  var formData = new FormData($('#form-password')[0])
-  formData.append('id_user', id_user);
-
-  Swal.fire({
-    title: 'Ubah Password',
-    text: "Apakah Anda yakin mengubah password !",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3498db',
-    cancelButtonColor: '#95a5a6',
-    confirmButtonText: 'Simpan',
-    cancelButtonText: 'Batal',
-    showLoaderOnConfirm: true,
-    preConfirm: function() {
-      return new Promise(function(resolve) {
-        $.ajax({
-          url: '<?= site_url() ?>' + '/Profile/update_password',
-          method: 'POST',
-          dataType: 'json',
-          data: formData,
-          async: true,
-          processData: false,
-          contentType: false,
-          success: function(data) {
-            if (data.success == true) {
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-              });
-
-              Toast.fire({
-                icon: 'success',
-                title: data.message
-              })
-              swal.hideLoading()
-              setTimeout(function() {
-                location.reload();
-              }, 1000);
-            } else {
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: data.message
-              });
-            }
-          },
-          fail: function(event) {
-            alert(event);
-          }
-        });
-      });
-    },
-    allowOutsideClick: false
-  });
-  event.preventDefault();
-});
-
-$('#form-profile').submit(function(event) {
-  event.preventDefault();
-  var id_user = $('#id_user').val();
-  var formData = new FormData($('#form-profile')[0])
-  formData.append('id_user', id_user);
-
-  Swal.fire({
-    title: 'Ubah Profile',
-    text: "Apakah Anda yakin mengubah profile !",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3498db',
-    cancelButtonColor: '#95a5a6',
-    confirmButtonText: 'Simpan',
-    cancelButtonText: 'Batal',
-    showLoaderOnConfirm: true,
-    preConfirm: function() {
-      return new Promise(function(resolve) {
-        $.ajax({
-          url: '<?= site_url() ?>' + '/Profile/update_profile',
-          method: 'POST',
-          dataType: 'json',
-          data: formData,
-          async: true,
-          processData: false,
-          contentType: false,
-          success: function(data) {
-            if (data.success == true) {
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-              });
-
-              Toast.fire({
-                icon: 'success',
-                title: data.message
-              })
-              swal.hideLoading()
-              setTimeout(function() {
-                location.reload();
-              }, 1000);
-            } else {
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: data.message
-              });
-            }
-          },
-          fail: function(event) {
-            alert(event);
-          }
-        });
-      });
-    },
-    allowOutsideClick: false
-  });
-  event.preventDefault();
-});
-
-function validate_password() {
-  var pass = $('#password').val();
-  var confirm_pass = $('#konfirm_password').val();
-  if (pass != confirm_pass) {
-    $('#pass-message').show();
-    $('#pass-message').text('Password tidak cocok !');
-    $('#pass-message').css('color', 'red');
-    $('#submit-reset').prop('disabled', true);
-  } else {
-    $('#pass-message').hide();
-    $('#pass-message').text('');
-    $('#pass-message').css('color', 'white');
-    $('#submit-reset').prop('disabled', false);
-  }
-}
-</script>

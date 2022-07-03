@@ -40,8 +40,8 @@ class Service extends CI_Controller
         $idLayanan = $this->input->post('idLayanan');
         $namaPelanggan = $this->input->post('namaPelanggan');
         $tipeKendaraan = $this->input->post('tipeKendaraan');
-        $merk = $this->input->post('merk');
-        $seri = $this->input->post('seri');
+        $merk = $this->input->post('merkKendaraan');
+        $nama = $this->input->post('namaKendaraan');
         $transmisi = $this->input->post('transmisi');
         $jenisBensin = $this->input->post('jenisBensin');
         $platNomor = $this->input->post('platNomor');
@@ -49,8 +49,8 @@ class Service extends CI_Controller
         $data = array(
             'namaPelanggan' => $namaPelanggan,
             'tipeKendaraan' => $tipeKendaraan,
-            'seri' => $seri,
-            'merk' => $merk,
+            'namaKendaraan' => $nama,
+            'merkKendaraan' => $merk,
             'transmisi' => $transmisi,
             'jenisBensin' => $jenisBensin,
             'platNomor' => $platNomor

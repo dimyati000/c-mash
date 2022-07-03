@@ -21,9 +21,7 @@
 		<div class="main-wrapper container">
 			<div class="navbar-bg"></div>
 			<nav class="navbar navbar-expand-lg main-navbar">
-				<a href="<?php echo base_url('/') ?>" class="navbar-brand sidebar-gone-hide">									
-				<img src="<?php echo base_url('/assets/img/bengkel1.png') ?>"  width="100%" height="50px" alt>
-		</a>
+				<a href="<?php echo base_url('/') ?>" class="navbar-brand sidebar-gone-hide">C-Mash</a>
 
 				<form class="form-inline ml-auto">
 

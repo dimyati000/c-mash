@@ -1,9 +1,19 @@
 <?php
 class ModelLaporan extends CI_Model{
-    public function showData()
-    {
-        return $this->db->get('tb_laporan');
+    //ini adalah modal untuk mengambil data dari tb layanan demi kebutuhan laporan pelayanan
+    public function laporanDataPelayanan($filter)
+    {   
+        $jenis_layanan = $filter['jenis_layanan'];
+        return $this->db->get_where("tb_layanan", array('jenisLayanan' => $jenis_layanan));
     }
+
+    //ini adalah modal untuk mengambil data dari tb layanan demi kebutuhan laporan penjualan
+    public function showDataPenjualan()
+    {
+        return $this->db->get('tb_invoice');
+    }
+
+
     public function tambahLaporan($data, $table)
     {
         return $this->db->insert($table, $data);
