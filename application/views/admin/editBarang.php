@@ -1,10 +1,25 @@
-<title>Edit Barang</title>
-<div class="main-content">
-	<div class="container">
-		<div class="card shadow-lg border-0 rounded-lg mt-5">
+<title>Edit Data Barang Onderdil</title>
+
+<body>
+	<div class="main-wrapper">
+		<!-- Main Content -->
+		<div class="main-content">
 			<section class="section">
 				<div class="section-header">
-					<h1>Edit Barang</h1>
+					<h1>Spare Part</h1>
+					<div class="section-header-breadcrumb">
+						<div class="breadcrumb-item active"><a href="<?= site_url('Dashboard') ?>">Dashboard</a></div>
+						<div class="breadcrumb-item">Spare Part</div>
+					</div>
+				</div>
+
+<!-- <div class="main-content"> -->
+	<div class="container">
+		<!-- <div class="row justify-content-center"> -->
+		<div class="card shadow-lg border-0 rounded-lg mt-50">
+			<section class="section">
+				<div class="section-header">
+					<h1>Edit Data Barang Onderdil</h1>
 				</div>
 				<div class="section-body">
 					<div class="container-fluid">

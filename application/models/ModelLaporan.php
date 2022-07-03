@@ -8,9 +8,19 @@ class ModelLaporan extends CI_Model{
     }
 
     //ini adalah modal untuk mengambil data dari tb layanan demi kebutuhan laporan penjualan
-    public function showDataPenjualan()
+    public function LaporanDataPenjualan($filter)
     {
-        return $this->db->get('tb_invoice');
+        $tanggalAwal = $filter['tanggal_awal'];
+        $tanggalAkhir = $filter['tanggal_akhir'];
+        $query = $this->db->query("
+        SELECT i.*, coalesce(ps.jumlah_total, 0) AS jumlah_total, coalesce(ps.harga_total, 0) AS harga_total FROM tb_invoice i
+        LEFT JOIN (
+            SELECT p.idInvoice, SUM(p.jumlah) AS jumlah_total, SUM(p.harga) AS harga_total FROM tb_pesanan p
+            GROUP BY p.idInvoice
+        ) ps ON i.idInvoice = ps.idInvoice
+        WHERE DATE(i.tanggalPemesanan) BETWEEN '$tanggalAwal' AND '$tanggalAkhir'; 
+        ");
+        return $query;
     }
 
 

@@ -1,15 +1,29 @@
-<title>Data Barang</title>
-<div class="main-content">
+<title>Data Barang Onderdil</title>
+
+<body>
+	<div class="main-wrapper">
+		<!-- Main Content -->
+		<div class="main-content">
+			<section class="section">
+				<div class="section-header">
+					<h1>Spare Part</h1>
+					<div class="section-header-breadcrumb">
+						<div class="breadcrumb-item active"><a href="<?= site_url('Dashboard') ?>">Dashboard</a></div>
+						<div class="breadcrumb-item">Spare Part</div>
+					</div>
+				</div>
+
+<!-- <div class="main-content"> -->
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="card shadow-lg border-0 rounded-lg mt-5">
+		<!-- <div class="row justify-content-center"> -->
+			<div class="card shadow-lg border-0 rounded-lg mt-50">
 				<section class="section">
 					<div class="section-header">
-						<h1>Data Barang</h1>
+						<h1>Data Barang Onderdil</h1>
 					</div>
 					<div class="section-body">
 						<div class="container-fluid">
-							<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahBarang"><i class="fas fa-plus fa-sm"> Tambah Data</i></button>
+							<button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarang"><i class="fas fa-plus fa-sm"> Tambah Data</i></button>
 							<div class="card-body">
 								<div class="table-responsive">
 									<!-- Tabel Data Barang -->
@@ -21,7 +35,7 @@
 											<th>Harga</th>
 											<th>Keterangan</th>
 											<th>Stok</th>
-											<th colspan="2">Aksi</th>
+											<th align="center" colspan="2">Aksi</th>
 										</tr>
 										<?php
 										$no = 1;
@@ -33,10 +47,9 @@
 												<td><?php echo $brg->harga ?></td>
 												<td><?php echo $brg->keterangan ?></td>
 												<td><?php echo $brg->stok ?></td>
-												<td><?php echo anchor('DataBarang/edit/' . $brg->idBarang, ' <div class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></div>') ?>
+												<td><?php echo anchor('DataBarang/edit/' . $brg->idBarang, ' <div class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit Data</div>') ?>
 												</td>
-												<td><?php echo anchor('DataBarang/delete/' . $brg->idBarang, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
-
+												<td><?php echo anchor('DataBarang/delete/' . $brg->idBarang, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Hapus Data</div>') ?>
 												</td>
 											</tr>
 										<?php endforeach; ?>
