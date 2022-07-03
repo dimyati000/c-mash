@@ -86,11 +86,10 @@
             </div>
           </td>
           <td width="70%" class="text-center" colspan="2">
-            <span style="font-size:15px">LAPORAN PELAYANAN</span> <br>
-            <span style="font-size:15px;">C-Mash</span> <br>
-            <span style="font-size:12px"> Banjaranyar, Lopang, Kec. Kembangbahu, Kabupaten Lamongan, Jawa Timur 62282</span> <br>
-            <span style="font-size:12px">Email : dimyati@gmail.com</a></span>
-            <span style="font-size:12px">Telepon : 082221337795</span>
+            <span style="font-size:15px">LAPORAN PENJUALAN C-MASH</span> <br>
+            <span style="font-size:12px">Jl.Semeru No.36 Ajung Pancakarya, Kabupaten Jember, Jawa Timur</span> <br>
+            <span style="font-size:12px">Email : rahmahtiyas@gmail.com</a></span>
+            <span style="font-size:12px">Telepon : 082 221 337 795</span>
           </td>
           <td width="10%"></td>
         </tr>
@@ -100,33 +99,40 @@
     <hr class="line-title-child">
 
     <p style="margin-top:35px;" class="kata-pengantar">Laporan Pelayanan Periode Tanggal :
-      <!-- <?= format_date($tanggal_awal, 'd/m/Y') ?> s/d <?= format_date($tanggal_akhir, 'd/m/Y') ?></p> -->
+      <?= format_date($tanggal_awal, 'd/m/Y') ?> s/d <?= format_date($tanggal_akhir, 'd/m/Y') ?></p>
     <table class="table">
       <thead class="head-table">
         <tr>
-          <th width="4%" class="text-center">No.</th>
-          <th width="15%">Tanggal Pesanan</th>
-          <th width="10%" class="text-center">Nama Pemesan</th>
-          <th width="8%" class="text-center">Jenis Laporan</th>
-          <th width="20%">Barang Terbeli</th>
-          <th width="15%" class="text-center">Total Harga</th>
-          <th width="20%">Keterangan</th>
+          <th>No</th>
+          <th>Tanggal Pemesanan</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>No Telp</th>
+          <!-- <th>Email	</th> -->
+          <th>Batas Pembayaran</th>
+          <th>Jumlah Barang</th>
+          <th align="center">Harga Total</th>
+          <!-- <th colspan="3">Aksi</th> -->
         </tr>
       </thead>
       <tbody class="body-table">
-      <?php
-      $no = 1;
-      foreach ($laporan as $lpr) { ?>
+        <?php
+        $no = 1;
+        foreach ($invoice as $inv) :
+        ?>
         <tr>
           <td><?php echo $no++ ?></td>
-          <td><?php echo $lpr->tanggalPemesanan ?></td>
-          <td><?php echo $lpr->namaPemesan ?></td>
-          <td><?php echo $lpr->jenisLaporan ?></td>
-          <td><?php echo $lpr->barangTerbeli ?></td>
-          <td><?php echo $lpr->totalHarga ?></td>
-          <td><?php echo $lpr->keterangan ?></td>
+          <td><?php echo format_date($inv->tanggalPemesanan, 'd-m-Y') ?></td>
+          <td><?php echo $inv->nama?></td>
+          <td><?php echo $inv->alamat ?></td>
+          <td><?php echo $inv->noTelp ?></td>
+          <!-- <td><?php echo $inv->email ?></td> -->
+          <td><?php echo $inv->batasPembayaran ?></td>
+          
+          <td align="center"><?php echo $inv->jumlah_total ?></td>
+          <td align="right">Rp.<?php echo $inv->harga_total ?></td>
         </tr>
-        <?php } ?>
+        <?php endforeach ?>
       </tbody>
     </table>
   </div>

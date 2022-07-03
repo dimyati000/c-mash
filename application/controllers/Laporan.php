@@ -22,14 +22,7 @@ class Laporan extends CI_Controller{
         $this->load->view("laporan/laporan_pelayanan", $data);
     }
 
-    public function laporan_penjualan()
-    {
-        $data['invoice'] = $this->ModelLaporan->showDataPenjualan()->result();
-        $this->load->view("layout/templateAdmin");
-        $this->load->view("laporan/laporan_penjualan", $data);
-    }
-
-    //cetak laporan
+    //cetak laporan pelayanan
     public function cetak_laporan_pelayanan() {
         $tanggal_awal = $this->input->get("tanggal_awal");
         $tanggal_akhir = $this->input->get("tanggal_akhir");
@@ -42,12 +35,46 @@ class Laporan extends CI_Controller{
         $data['laporan'] = $this->ModelLaporan->laporanDataPelayanan($filter)->result();
         $data['tanggal_awal'] = $tanggal_awal;
         $data['tanggal_akhir'] = $tanggal_akhir;
+        $data['title'] = "Laporan Pelayanan"; 
+
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Laporan Pelayanan.pdf";
+        $this->pdf->load_view('laporan/cetak_laporan_pelayanan.php', $data);
+    }
+
+    public function laporan_penjualan()
+    {
+        $tanggal_awal = $this->input->get("tanggal_awal");
+        $tanggal_akhir = $this->input->get("tanggal_akhir");
+        $filter = array(
+            'tanggal_awal' => ($this->input->get('tanggal_awal')) ? format_date($tanggal_awal, 'Y-m-d') : date("Y-m-d"),
+            'tanggal_akhir' => ($this->input->get('tanggal_akhir')) ? format_date($tanggal_akhir, 'Y-m-d') : date("Y-m-d"),
+        );
+
+        $data['invoice'] = $this->ModelLaporan->LaporanDataPenjualan($filter)->result();
+        $this->load->view("layout/templateAdmin");
+        $this->load->view("laporan/laporan_penjualan", $data);
+    }
+
+    //cetak laporan penjualan
+    public function cetak_laporan_penjualan() {
+        $tanggal_awal = $this->input->get("tanggal_awal");
+        $tanggal_akhir = $this->input->get("tanggal_akhir");
+        $filter = array(
+            'tanggal_awal' => ($this->input->get('tanggal_awal')) ? format_date($tanggal_awal, 'Y-m-d') : date("Y-m-d"),
+            'tanggal_akhir' => ($this->input->get('tanggal_akhir')) ? format_date($tanggal_akhir, 'Y-m-d') : date("Y-m-d"),
+        );
+
+        $data['invoice'] = $this->ModelLaporan->LaporanDataPenjualan($filter)->result();
+        $data['tanggal_awal'] = $tanggal_awal;
+        $data['tanggal_akhir'] = $tanggal_akhir;
         $data['title'] = "Laporan Penjualan"; 
 
         $this->load->library('pdf');
         $this->pdf->setPaper('A4', 'potrait');
         $this->pdf->filename = "Laporan Penjualan.pdf";
-        $this->pdf->load_view('laporan/cetak_laporan_pelayanan.php', $data);
+        $this->pdf->load_view('laporan/cetak_laporan_penjualan.php', $data);
     }
 
 

@@ -123,7 +123,7 @@
 				<label>Jenis Keluhan</label>
 				<input type="text" name="jenisKendala" value=" " class="form-control" required>
                 <input type="hidden" name="jenisLayanan" value="ServiceDibengkel" class="form-control">
-                <input type="hidden" name="verifikasi" value=" " class="form-control">
+                <input type="hidden" name="verifikasi" value="Sudah Dilayani" class="form-control">
 			</div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success btn-lg btn-block">

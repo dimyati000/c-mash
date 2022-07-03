@@ -28,7 +28,7 @@
 								<div class="row">
 										<div class="col-12 col-md-12 col-lg-3">
 											<div class="form-group" col-md-4>
-												<select name="jenis_layanan" id="jenis_layanan" onchange="showLayanan()"  class="form-control">
+												<select name="jenis_layanan" id="jenis_layanan" onchange="showPelayanan()"  class="form-control">
 													<option value="">Pilih Jenis Layanan</option>
 													<option <?php if(isset($_GET['jenis_layanan'])){ echo ($_GET['jenis_layanan']=='HomeService') ? ' selected' : ''; } ?> value="HomeService">Home Service</option>
 													<option <?php if(isset($_GET['jenis_layanan'])){ echo ($_GET['jenis_layanan']=='ServiceDibengkel') ? ' selected' : ''; } ?> value="ServiceDibengkel">Service Dibengkel</option>
@@ -52,7 +52,7 @@
 											<a href="javascript:;" onclick="printReport()" class="btn btn-success">
 												<i class="fas fa-print">Print</i></a>
 										</div>
-									</div>
+								</div>
 									<!-- <button class="btn" type="submit">Tes</button>
 							</form> -->
 								<div class="card-body">
@@ -99,7 +99,7 @@
 		window.open(link, '_blank', 'width=1024, height=768')
 	}
 
-	function showLayanan() {
+	function showPelayanan() {
 			var tgl_awal = $('#tgl_awal').val();
 			var tgl_akhir = $('#tgl_akhir').val();
 			var jenis_layanan = $('#jenis_layanan').val();
