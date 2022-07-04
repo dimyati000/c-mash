@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 04, 2022 at 09:21 PM
+-- Generation Time: Jul 05, 2022 at 12:15 AM
 -- Server version: 8.0.29-0ubuntu0.20.04.3
 -- PHP Version: 7.4.25
 
@@ -67,15 +67,21 @@ CREATE TABLE `tb_kasir` (
   `total` int NOT NULL,
   `bayar` int NOT NULL,
   `kembalian` int NOT NULL,
-  `hidden` varchar(30) NOT NULL
+  `hidden` varchar(30) NOT NULL,
+  `namaBarang` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_kasir`
 --
 
-INSERT INTO `tb_kasir` (`id`, `namaPelanggan`, `tanggal`, `keterangan`, `total`, `bayar`, `kembalian`, `hidden`) VALUES
-(1, 'saya', '2022-06-09', 'keterangan ', 470, 500000, 30, '');
+INSERT INTO `tb_kasir` (`id`, `namaPelanggan`, `tanggal`, `keterangan`, `total`, `bayar`, `kembalian`, `hidden`, `namaBarang`) VALUES
+(1, 'saya', '2022-06-09', 'keterangan ', 470, 500000, 30, '', ''),
+(8, 'cek', '2022-07-04', 'cek', 100, 300000, 200, '', 'sarung'),
+(10, 'agus', '2022-07-04', 'pelanggan baru', 204, 300000, 96, '', 'oli'),
+(11, 'Agus Salim', '2022-07-04', 'Pelanggan Lama', 20, 50000, 30, '', 'Lampu Depan'),
+(13, 'afusa', '2022-07-04', 'dek', 404, 2000222, 1, '', 'oke'),
+(14, 'deeer', '2022-07-04', 'erqeqe', 24, 212122, 187, '', 'qweqe');
 
 -- --------------------------------------------------------
 
@@ -122,8 +128,8 @@ CREATE TABLE `tb_layanan` (
   `dusun` varchar(50) NOT NULL,
   `tipeKendaraan` varchar(50) NOT NULL,
   `kilometer` varchar(20) NOT NULL,
-  `merkKendaraan` varchar(50) CHARACTER NOT NULL,
-  `namaKendaraan` varchar(50) CHARACTER NOT NULL,
+  `merkKendaraan` varchar(50) NOT NULL,
+  `namaKendaraan` varchar(50) NOT NULL,
   `warna` varchar(50) NOT NULL,
   `transmisi` varchar(50) NOT NULL,
   `jenisBensin` varchar(20) NOT NULL,
@@ -141,10 +147,7 @@ CREATE TABLE `tb_layanan` (
 
 INSERT INTO `tb_layanan` (`idLayanan`, `jenisLayanan`, `jenisService`, `namaPelanggan`, `noWA`, `alamat`, `provinsi`, `kota`, `kecamatan`, `desa`, `dusun`, `tipeKendaraan`, `kilometer`, `merkKendaraan`, `namaKendaraan`, `warna`, `transmisi`, `jenisBensin`, `platNomor`, `jenisKendala`, `totalHarga`, `tanggalPemesanan`, `jadwalBooking`, `verifikasi`) VALUES
 (8, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1', 'yamaha', 'vega', 'Hijau', 'd', '2w', 'L 12982 KW', 'dad', 0, '2022-07-03 00:00:00', NULL, 'Sudah Terverifikasi'),
-(9, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', 'd', 'yamaha', 'vega', 'Hijau', 'd', 'd', 'L 12982 KW', 'd', 0, '2022-07-03 00:00:00', NULL, 'Belum Terverifikasi'),
-(10, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1KM', 'yamaha', 'vega', 'Putih', 'de', 'Aftur', 'L 12982 KW', 'Cek hati', 0, '2022-07-03 00:00:00', NULL, 'Belum Terverifikasi'),
 (12, 'ServiceDibengkel', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', '', '', '', '', 'bebek', '1KM', 'yamaha', 'vega', 'Putih', '', '', 'L 12982 KW', ' Ganti Oli', 0, '2022-07-03 00:00:00', '2022-07-03', 'Sudah Dilayani'),
-(13, 'HomeService', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1KM', 'yamaha', 'vega', 'Hijau', 'manual', 'pertalite', 'L 12982 KW', 'ngambil ', 0, '2022-07-04 00:00:00', NULL, 'Belum Terverifikasi'),
 (14, 'ServiceDibengkel', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', '', '', '', '', 'bebek', '1Km', 'yamaha', 'vega', 'Putih', 'manual', 'pertamax', 'L 12982 KW', 'Ban ganti', 0, '2022-07-04 00:00:00', '2022-07-04', 'Sudah Dilayani'),
 (15, 'HomeService', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1Km', 'yamaha', 'vega', 'Hijau', '', '', 'L 12982 KW', 'Ganti Oli', 0, '2022-07-04 00:00:00', NULL, 'Belum Terverifikasi'),
 (16, 'ServiceDibengkel', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', '', '', '', '', 'bebek', '1Km', 'yamaha', 'vega', 'Putih', '', '', 'L 12982 KW', 'Ganti Aki ', 0, '2022-07-04 00:00:00', '2022-07-04', 'Sudah Dilayani');
@@ -394,7 +397,7 @@ ALTER TABLE `tb_invoice`
 -- AUTO_INCREMENT for table `tb_kasir`
 --
 ALTER TABLE `tb_kasir`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_laporan`
