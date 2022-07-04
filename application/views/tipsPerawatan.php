@@ -82,7 +82,7 @@
                         </ol>
                     </div> <!-- end of text-container -->
                     
-                    <a class="btn-outline-reg" href="index.html">BACK</a>
+                    <a class="btn-outline-reg" href="<?php echo base_url('Home') ?>">BACK</a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->

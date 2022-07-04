@@ -52,8 +52,8 @@
             $nama = $this->input->post("namaKendaraan");
             // $seri = $this->input->post("seri");
             $warna = $this->input->post("warna");
-            $transmisi = $this->input->post("transmisi");
-            $jenisBensin = $this->input->post("bensin");
+            // $transmisi = $this->input->post("transmisi");
+            // $jenisBensin = $this->input->post("bensin");
             $platNomor = $this->input->post("platNomor");
 			$jadwalBooking = $this->input->post("jadwalBooking");
             $jenisKendala = $this->input->post("jenisKendala");
@@ -76,8 +76,8 @@
                 'namaKendaraan' => $nama, 
                 // 'seri' => $seri,
                 'warna' => $warna,
-                'transmisi' => $transmisi ,
-                'jenisBensin' => $jenisBensin,
+                // 'transmisi' => $transmisi ,
+                // 'jenisBensin' => $jenisBensin,
                 'platNomor' => $platNomor,
                 'jenisKendala' => $jenisKendala,
 				'jadwalBooking' => $jadwalBooking,
@@ -91,7 +91,7 @@
              <span aria-hidden="true">&times;</span>
            </button>
          </div>');
-            redirect('../Home');
+            redirect('../Pelayanan/homeservice');
         }
 
         // Tambah Data Layanan Bengkel
@@ -113,8 +113,8 @@
             $nama = $this->input->post("namaKendaraan");
             // $seri = $this->input->post("seri");
             $warna = $this->input->post("warna");
-            $transmisi = $this->input->post("transmisi");
-            $jenisBensin = $this->input->post("bensin");
+            // $transmisi = $this->input->post("transmisi");
+            // $jenisBensin = $this->input->post("bensin");
             $platNomor = $this->input->post("platNomor");
 			$jadwalBooking = $this->input->post("jadwalBooking");
             $jenisKendala = $this->input->post("jenisKendala");
@@ -137,8 +137,8 @@
                 'namaKendaraan' => $nama, 
                 // 'seri' => $seri,
                 'warna' => $warna,
-                'transmisi' => $transmisi ,
-                'jenisBensin' => $jenisBensin,
+                // 'transmisi' => $transmisi ,
+                // 'jenisBensin' => $jenisBensin,
                 'platNomor' => $platNomor,
                 'jenisKendala' => $jenisKendala,
 				'jadwalBooking' => $jadwalBooking,
@@ -152,6 +152,6 @@
              <span aria-hidden="true">&times;</span>
            </button>
          </div>');
-            redirect('../Home');
+            redirect('../Pelayanan/dibengkel');
         }
     }

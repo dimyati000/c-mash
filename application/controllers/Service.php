@@ -82,7 +82,7 @@ class Service extends CI_Controller
     {
         $where = array('idLayanan' => $idLayanan);
         $this->ModelService->hapusData($where, 'tb_layanan');
-        redirect('../Service');
+        redirect('../Service/BookingService');
     }  
 		// Proses layanan  
 		public function proses($idLayanan)

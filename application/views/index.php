@@ -39,13 +39,17 @@
           <?php foreach ($barang as $brg) : ?>
             <div class="card ml-3" style="width: 15rem;">
               <img class="card-img-top" style="height: 12rem;" src="<?php echo base_url() . '/uploads/' . $brg->gambar ?>" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title mb-1"><?php echo $brg->namaBarang ?></h5>
-                <small><?php echo $brg->keterangan ?></small><br><br>
-                <p class="card-text mb-3"><span class="badge badge-success">Rp <?php echo $brg->harga ?></span></p>
-                <?php echo anchor('User/tambahKeranjang/'. $brg->idBarang, '<div class="btn btn-md btn-success">Add Cart</div>')?>
-                <?php echo anchor('User/detail/'. $brg->idBarang, '<div class="btn btn-md btn-info">Detail</div>')?>
-              </div>
+              <form action="<?php echo base_url() . 'User/tambahKeranjang/'. $brg->idBarang ?>" method="post" class="needs-validation" novalidate="">
+                <div class="card-body">
+                  <h5 class="card-title mb-1"><?php echo $brg->namaBarang ?></h5>
+                  <small><?php echo $brg->keterangan ?></small><br><br>
+                  <p class="card-text mb-3"><span class="badge badge-success">Rp <?php echo $brg->harga ?></span></p>
+                  <!-- <?php echo anchor('User/tambahKeranjang/'. $brg->idBarang, '<div class="btn btn-md btn-success">Add Cart</div>')?> -->
+                  <input value="1" name="qty" type="hidden" class="form-control"  required>
+                  <button type="submit" class="btn btn-primary">Add Cart</button>                                 
+                  <?php echo anchor('User/detail/'. $brg->idBarang, '<div class="btn btn-md btn-warning">Detail</div>')?>
+                </div>
+              </form>
             </div>
           <?php endforeach; ?>
         </div>

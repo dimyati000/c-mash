@@ -30,7 +30,7 @@
 												<td><?php echo $layanan->namaPelanggan ?></td>
 												<td><?php echo $layanan->platNomor ?></td>
 												<td><?php echo $layanan->alamat ?></td>
-												<td><?php echo $layanan->tanggalPemesanan ?></td>
+												<td><?php echo format_date($layanan->tanggalPemesanan, 'd-m-Y') ?></td>
 												<td><?php echo $layanan->verifikasi?></td>
 												<td>
 												<?php echo anchor('Service/proses/' . $layanan->idLayanan, ' <div class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></div>') ?>

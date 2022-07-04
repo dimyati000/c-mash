@@ -30,10 +30,10 @@
 										<tr>
 											<th>No</th>
 											<th>Nama Pelanggan</th>
-											<th>Jenis Bensin</th>
+											<th>Nama Kendaraan</th>
 											<th>Plat Nomor</th>
 											<th>Tipe Kendaraan</th>
-											<th>Transmisi</th>
+											<!-- <th>Transmisi</th> -->
 											<th colspan="3">Aksi</th>
 										</tr>
 										<?php
@@ -42,10 +42,10 @@
 											<tr>
 												<td><?php echo $no++ ?></td>
 												<td><?php echo $layanan->namaPelanggan ?></td>
-												<td><?php echo $layanan->jenisBensin ?></td>
+												<td><?php echo $layanan->namaKendaraan ?></td>
 												<td><?php echo $layanan->platNomor ?></td>
 												<td><?php echo $layanan->tipeKendaraan ?></td>
-												<td><?php echo $layanan->transmisi ?></td>
+												<!-- <td><?php echo $layanan->transmisi ?></td> -->
 												<td><?php echo anchor('Service/edit/' . $layanan->idLayanan, ' <div class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></div>') ?>
 												</td>
 												<td><?php echo anchor('Service/delete/' . $layanan->idLayanan, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>

@@ -14,8 +14,8 @@ class Laporan extends CI_Controller{
         $tanggal_akhir = $this->input->get("tanggal_akhir");
         $filter = array(
             'jenis_layanan' => $this->input->get('jenis_layanan'),
-            'tanggal_awal' => format_date($tanggal_awal, 'Y-m-d'),
-            'tanggal_akhir' => format_date($tanggal_akhir, 'Y-m-d'),
+            'tanggal_awal' => ($this->input->get('tanggal_awal')) ? format_date($tanggal_awal, 'Y-m-d') : date("Y-m-d"),
+            'tanggal_akhir' => ($this->input->get('tanggal_akhir')) ? format_date($tanggal_akhir, 'Y-m-d') : date("Y-m-d"),
         );
         $data['laporan'] = $this->ModelLaporan->laporanDataPelayanan($filter)->result();
         $this->load->view("layout/templateAdmin");
@@ -28,8 +28,8 @@ class Laporan extends CI_Controller{
         $tanggal_akhir = $this->input->get("tanggal_akhir");
         $filter = array(
             'jenis_layanan' => $this->input->get('jenis_layanan'),
-            'tanggal_awal' => format_date($tanggal_awal, 'Y-m-d'),
-            'tanggal_akhir' => format_date($tanggal_akhir, 'Y-m-d'),
+            'tanggal_awal' => ($this->input->get('tanggal_awal')) ? format_date($tanggal_awal, 'Y-m-d') : date("Y-m-d"),
+            'tanggal_akhir' => ($this->input->get('tanggal_akhir')) ? format_date($tanggal_akhir, 'Y-m-d') : date("Y-m-d"),
         );
 
         $data['laporan'] = $this->ModelLaporan->laporanDataPelayanan($filter)->result();

@@ -37,20 +37,20 @@
 										</div>
 										<div class="col-12 col-md-12 col-lg-2">
 											<div class="form-group">
-												<input placeholder="Tanggal Awal" id="tgl_awal" Tooltip="Tanggal Awal" type="date" name="tgl_awal" class="form-control" value="<?php echo date("Y-m-d"); ?>"
+												<input placeholder="Tanggal Awal" id="tgl_awal" Tooltip="Tanggal Awal" type="date" name="tgl_awal" onchange="showPelayanan()"  class="form-control" value="<?= (isset($_GET['tanggal_awal'])) ? $_GET['tanggal_awal'] : date('Y-m-d') ?>"
 													required>
 											</div>
 										</div>
 										<div class="col-12 col-md-12 col-lg-2">
 											<div class="form-group">
-												<input placeholder="Tanggal Akhir" id="tgl_akhir" Tooltip="Tanggal Akhir" type="date" name="tgl_akhir" class="form-control" value="<?php echo date("Y-m-d"); ?>"
+												<input placeholder="Tanggal Akhir" id="tgl_akhir" Tooltip="Tanggal Akhir" type="date" name="tgl_akhir" onchange="showPelayanan()" class="form-control" value="<?= (isset($_GET['tanggal_akhir'])) ? $_GET['tanggal_akhir'] : date('Y-m-d') ?>"
 													required>
 											</div>
 										</div>
 										<div class="col-12 col-md-12 col-lg-5">
 											<!-- <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahBarang"><i class="fas fa-plus fa-sm"> Tambah Data</i></button> -->
 											<a href="javascript:;" onclick="printReport()" class="btn btn-success">
-												<i class="fas fa-print">Print</i></a>
+												<i class="fas fa-print"> Print</i></a>
 										</div>
 								</div>
 									<!-- <button class="btn" type="submit">Tes</button>

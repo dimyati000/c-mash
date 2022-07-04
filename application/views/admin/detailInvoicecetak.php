@@ -52,7 +52,7 @@
 							</table>
 							<br>
 							<!-- <button class="btn"><a href="<?php echo base_url('Transaksi') ?>">Kembali</a></button> -->
-							<button class="cetak" onclick="window.print()" class="btn btn-primary">Cetak</button>
+							<button id="cetak" onclick="window.print()" class="btn btn-primary">Cetak</button>
 						</div>
 					</div>
 				</section>

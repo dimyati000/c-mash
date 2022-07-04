@@ -27,20 +27,20 @@
 								<div class="row">
 										<div class="col-12 col-md-12 col-lg-2">
 											<div class="form-group">
-												<input placeholder="Tanggal Awal" name="tgl_awal" id="tgl_awal"  onchange="showPenjualan()"  Tooltip="Tanggal Awal" type="date" class="form-control" value="<?= (isset($_GET['tanggal_awal'])) ? $_GET['tanggal_awal'] : date('Y-m-d') ?>"
+												<input placeholder="Tanggal Awal" name="tgl_awal" id="tgl_awal" onchange="showPenjualan()" Tooltip="Tanggal Awal" type="date" class="form-control" value="<?= (isset($_GET['tanggal_awal'])) ? $_GET['tanggal_awal'] : date('Y-m-d') ?>"
 													required>
 											</div>
 										</div>
 										<div class="col-12 col-md-12 col-lg-2">
 											<div class="form-group">
-												<input placeholder="Tanggal Akhir" name="tgl_akhir"  id="tgl_akhir"  onchange="showPenjualan()" Tooltip="Tanggal Akhir" type="date" class="form-control" value="<?= (isset($_GET['tanggal_akhir'])) ? $_GET['tanggal_akhir'] : date('Y-m-d') ?>"
+												<input placeholder="Tanggal Akhir" name="tgl_akhir"  id="tgl_akhir" onchange="showPenjualan()" Tooltip="Tanggal Akhir" type="date" class="form-control" value="<?= (isset($_GET['tanggal_akhir'])) ? $_GET['tanggal_akhir'] : date('Y-m-d') ?>"
 													required>
 											</div>
 										</div>
 										<div class="col-12 col-md-12 col-lg-5">
 											<!-- <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahBarang"><i class="fas fa-plus fa-sm"> Tambah Data</i></button> -->
 											<a href="javascript:;" onclick="printReport()" class="btn btn-success">
-												<i class="fas fa-print">Print</i></a>
+												<i class="fas fa-print"> Print</i></a>
 										</div>
 								</div>
 								<div class="card-body">

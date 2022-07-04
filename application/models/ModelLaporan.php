@@ -3,9 +3,23 @@ class ModelLaporan extends CI_Model{
     //ini adalah modal untuk mengambil data dari tb layanan demi kebutuhan laporan pelayanan
     public function laporanDataPelayanan($filter)
     {   
-        $jenis_layanan = $filter['jenis_layanan'];
-        return $this->db->get_where("tb_layanan", array('jenisLayanan' => $jenis_layanan));
+        $tanggalAwal = $filter['tanggal_awal'];
+        $tanggalAkhir = $filter['tanggal_akhir'];
+        $jenisLayanan = $filter['jenis_layanan'];
+        $query = $this->db->query("
+        SELECT * FROM tb_layanan l
+        WHERE l.jenisLayanan = '$jenisLayanan'
+        AND DATE(l.tanggalPemesanan) BETWEEN '$tanggalAwal' AND '$tanggalAkhir';  
+        ");
+        return $query;
     }
+
+    // public function laporanDataPelayanan($filter)
+    // {   
+    //     $jenis_layanan = $filter['jenis_layanan'];
+    //     return $this->db->get_where("tb_layanan", array('jenisLayanan' => $jenis_layanan));
+        
+    // }
 
     //ini adalah modal untuk mengambil data dari tb layanan demi kebutuhan laporan penjualan
     public function LaporanDataPenjualan($filter)

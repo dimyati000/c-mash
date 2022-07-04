@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<!-- CSS Libraries -->
+	
+	<!-- Favicon  -->
+	<link rel="icon" href="<?php echo base_url('/assets/img/fav-icon.png') ?>">
 
 	<!-- Template CSS -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
@@ -26,11 +29,11 @@
 						<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
 						<li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
 					</ul>
-					<div class="search-element">
+					<!-- <div class="search-element">
 						<input class="form-control" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off" data-width="250">
 						<input class="btn" type="submit" name="input" value="Cari"></input>
 						<div class="search-backdrop"></div>
-					</div>
+					</div> -->
 				</form>
 				<ul class="navbar-nav navbar-right">
 					<li>

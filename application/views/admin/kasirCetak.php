@@ -1,4 +1,4 @@
-<title>Kasir</title>
+<title>Cetak Data Kasir</title>
 
 <div class="main-content">
 	<div class="container">

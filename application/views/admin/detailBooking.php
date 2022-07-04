@@ -45,12 +45,12 @@
                         <td><?php echo $bkg->tipeKendaraan ?></td>
                     </tr>
                     <tr>
-                        <th>Seri</th>
-                        <td><?php echo $bkg->seri ?></td>
+                        <th>Nama Kendaraan</th>
+                        <td><?php echo $bkg->namaKendaraan ?></td>
                     </tr>
                     <tr>
-                        <th>Merk</th>
-                        <td><?php echo $bkg->merk ?></td>
+                        <th>Merk Kendaraan</th>
+                        <td><?php echo $bkg->merkKendaraan ?></td>
                     </tr>
                     <tr>
                         <th>Warna</th>

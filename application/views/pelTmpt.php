@@ -2,12 +2,13 @@
     <title>Service Di bengkel</title>
 </head>
 
+<?php echo $this->session->flashdata('pesan') ?>
+
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
             <h4>Service Di bengkel</h4>
         </div>
-        <?php echo $this->session->flashdata('pesan') ?>
         <div class="card-body">
 			<!-- Form Pelayanan Di bengkel -->
             <form action="<?php echo base_url() . 'Pelayanan/tambahLayananBengkel'?>" method="post" enctype="multipart/form-data" autocomplete="off">
@@ -104,14 +105,14 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Jenis Transmisi</label>
                 <input type="text" name="transmisi" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Jenis Bensin</label>
                 <input type="text" name="bensin" class="form-control" required>
-            </div>
+            </div> -->
 			<div class="form-group">
                     <label>Jadwal Service</label>
                     <input type="date" name="jadwalBooking" class="form-control" value="<?php echo date("Y-m-d"); ?>" required>

@@ -52,7 +52,7 @@
 										<label>Warna</label>
 										<input type="text" name="warna" class="form-control" value="<?php echo $layanan->warna ?>">
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Jenis Transmisi</label>
 										<input type="text" name="transmisi" class="form-control" value="<?php echo $layanan->transmisi ?>">
 									</div>
@@ -60,7 +60,7 @@
 										<label>Jenis Bensin</label>
 										<input type="text" name="jenisBensin" class="form-control"
 											value="<?php echo $layanan->jenisBensin ?>">
-									</div>
+									</div> -->
 									<div class="form-group">
 										<label>Plat Nomor</label>
 										<input type="text" name="platNomor" class="form-control" value="<?php echo $layanan->platNomor ?>">

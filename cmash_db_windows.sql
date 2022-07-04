@@ -36,7 +36,7 @@ CREATE TABLE `tb_invoice` (
   `email` varchar(50) NOT NULL,
   `tanggalPemesanan` datetime NOT NULL,
   `batasPembayaran` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_invoice`
@@ -68,7 +68,7 @@ CREATE TABLE `tb_kasir` (
   `bayar` int NOT NULL,
   `kembalian` int NOT NULL,
   `hidden` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_kasir`
@@ -92,7 +92,7 @@ CREATE TABLE `tb_laporan` (
   `keterangan` varchar(50) NOT NULL,
   `tanggalPemesanan` date NOT NULL,
   `tanggalDibuat` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_laporan`
@@ -122,8 +122,8 @@ CREATE TABLE `tb_layanan` (
   `dusun` varchar(50) NOT NULL,
   `tipeKendaraan` varchar(50) NOT NULL,
   `kilometer` varchar(20) NOT NULL,
-  `merkKendaraan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `namaKendaraan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `merkKendaraan` varchar(50) CHARACTER NOT NULL,
+  `namaKendaraan` varchar(50) CHARACTER NOT NULL,
   `warna` varchar(50) NOT NULL,
   `transmisi` varchar(50) NOT NULL,
   `jenisBensin` varchar(20) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE `tb_layanan` (
   `tanggalPemesanan` datetime NOT NULL,
   `jadwalBooking` date DEFAULT NULL,
   `verifikasi` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_layanan`
@@ -168,7 +168,7 @@ CREATE TABLE `tb_midtrans` (
   `status_code` varchar(5) NOT NULL,
   `noTelp` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_midtrans`
@@ -195,7 +195,7 @@ CREATE TABLE `tb_motor` (
   `merk_motor` varchar(100) NOT NULL,
   `type_motor` varchar(100) NOT NULL,
   `plat_nomor` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -210,7 +210,7 @@ CREATE TABLE `tb_pesanan` (
   `namaBarang` varchar(50) NOT NULL,
   `jumlah` tinyint NOT NULL,
   `harga` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_pesanan`
@@ -255,7 +255,7 @@ CREATE TABLE `tb_product` (
   `keterangan` text NOT NULL,
   `stok` int NOT NULL,
   `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_product`
@@ -275,7 +275,7 @@ CREATE TABLE `tb_tentang` (
   `idTentang` int NOT NULL,
   `menuTentang` varchar(50) NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_tentang`
@@ -312,7 +312,7 @@ CREATE TABLE `tb_user` (
   `kota` varchar(100) NOT NULL,
   `desa` varchar(100) NOT NULL,
   `dusun` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_user`

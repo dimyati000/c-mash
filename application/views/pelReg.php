@@ -1,6 +1,9 @@
 <head>
 	<title>Home Service</title>
 </head>
+
+<?php echo $this->session->flashdata('pesan') ?>
+
 <div class="col-lg-12">
 	<!-- <div class="d-flex justify-content-center"> -->
 	<div class="card">
@@ -119,18 +122,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label>Jenis Transmisi</label>
 					<input type="text" name="transmisi" class="form-control" required>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label>Kilometer Kendaraan</label>
 					<input type="text" name="kilometer" class="form-control" required>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label>Jenis Bensin</label>
 					<input type="text" name="bensin" class="form-control" required>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label>Jenis Keluhan</label>
 					<input type="text" name="jenisKendala" class="form-control" required>
