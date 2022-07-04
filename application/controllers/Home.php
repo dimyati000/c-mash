@@ -4,8 +4,8 @@ class Home extends CI_Controller
 	// Memuat view home
     public function index()
     {
-        $this->load->view('layout/templateUser');
-        $this->load->view('layout/footerTemplate');
+        // $this->load->view('layout/templateUser');
+        // $this->load->view('layout/footerTemplate');
         $this->load->view('Home');
     }
 
