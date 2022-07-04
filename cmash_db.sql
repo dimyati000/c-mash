@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 01:28 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Host: localhost:3306
+-- Generation Time: Jul 04, 2022 at 03:54 PM
+-- Server version: 8.0.29-0ubuntu0.20.04.3
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,14 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tb_invoice` (
-  `idInvoice` int(11) NOT NULL,
+  `idInvoice` int NOT NULL,
   `nama` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `noTelp` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `tanggalPemesanan` datetime NOT NULL,
   `batasPembayaran` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_invoice`
@@ -43,7 +44,13 @@ CREATE TABLE `tb_invoice` (
 
 INSERT INTO `tb_invoice` (`idInvoice`, `nama`, `alamat`, `noTelp`, `email`, `tanggalPemesanan`, `batasPembayaran`) VALUES
 (2, 'asd', 'asd', '09394934', 'asdasd@gmail.com', '2022-06-12 07:52:02', '2022-06-13 07:52:02'),
-(3, 'Ahmad', 'jalan luduk ombo nomer 12', '09873839472', 'ahmadc4hy4@gmail.com', '2022-06-12 08:26:14', '2022-06-13 08:26:14');
+(3, 'Ahmad', 'jalan luduk ombo nomer 12', '09873839472', 'ahmadc4hy4@gmail.com', '2022-06-12 08:26:14', '2022-06-13 08:26:14'),
+(4, 'Agung Prasetyo', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-06-30 06:40:30', '2022-07-01 06:40:30'),
+(5, 'Agung Prasetyo', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-07-01 07:01:46', '2022-07-02 07:01:46'),
+(6, 'Agung Prasetyo', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-07-01 07:18:05', '2022-07-02 07:18:05'),
+(7, 'Agung Prasetyo', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-07-01 07:19:04', '2022-07-02 07:19:04'),
+(8, 'Agung Prasetyo ddd', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-07-03 15:56:00', '2022-07-04 15:56:00'),
+(10, 'Dimyati Azhar', 'jalan hayam muruk nomer 123', '09847733', 'agung@mail.com', '2022-07-03 21:09:02', '2022-07-04 21:09:02');
 
 -- --------------------------------------------------------
 
@@ -52,15 +59,15 @@ INSERT INTO `tb_invoice` (`idInvoice`, `nama`, `alamat`, `noTelp`, `email`, `tan
 --
 
 CREATE TABLE `tb_kasir` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `namaPelanggan` varchar(50) NOT NULL,
   `tanggal` date NOT NULL,
   `keterangan` varchar(50) NOT NULL,
-  `total` int(11) NOT NULL,
-  `bayar` int(11) NOT NULL,
-  `kembalian` int(11) NOT NULL,
+  `total` int NOT NULL,
+  `bayar` int NOT NULL,
+  `kembalian` int NOT NULL,
   `hidden` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_kasir`
@@ -76,22 +83,23 @@ INSERT INTO `tb_kasir` (`id`, `namaPelanggan`, `tanggal`, `keterangan`, `total`,
 --
 
 CREATE TABLE `tb_laporan` (
-  `idLaporan` int(11) NOT NULL,
+  `idLaporan` int NOT NULL,
   `namaPemesan` varchar(50) NOT NULL,
   `jenisLaporan` varchar(30) NOT NULL,
   `barangTerbeli` varchar(50) NOT NULL,
-  `totalHarga` int(20) NOT NULL,
+  `totalHarga` int NOT NULL,
   `keterangan` varchar(50) NOT NULL,
   `tanggalPemesanan` date NOT NULL,
   `tanggalDibuat` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_laporan`
 --
 
 INSERT INTO `tb_laporan` (`idLaporan`, `namaPemesan`, `jenisLaporan`, `barangTerbeli`, `totalHarga`, `keterangan`, `tanggalPemesanan`, `tanggalDibuat`) VALUES
-(1, 'subagyo', 'Service Ditempat', 'barang 1', 450000, 'ini keterangan', '2022-06-08', '2022-06-12 00:29:49');
+(1, 'subagyo', 'Service Booking', 'barang 1', 450000, 'ini keterangan', '2022-06-08', '2022-06-12 00:29:49'),
+(4, 'as', 'Service Booking', 'as', 0, 'as', '2022-06-24', '2022-06-19 11:40:14');
 
 -- --------------------------------------------------------
 
@@ -100,7 +108,7 @@ INSERT INTO `tb_laporan` (`idLaporan`, `namaPemesan`, `jenisLaporan`, `barangTer
 --
 
 CREATE TABLE `tb_layanan` (
-  `idLayanan` int(11) NOT NULL,
+  `idLayanan` int NOT NULL,
   `jenisLayanan` varchar(20) NOT NULL,
   `jenisService` varchar(20) NOT NULL,
   `namaPelanggan` varchar(50) NOT NULL,
@@ -113,26 +121,28 @@ CREATE TABLE `tb_layanan` (
   `dusun` varchar(50) NOT NULL,
   `tipeKendaraan` varchar(50) NOT NULL,
   `kilometer` varchar(20) NOT NULL,
-  `merk` varchar(50) NOT NULL,
-  `seri` varchar(50) NOT NULL,
+  `merkKendaraan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `namaKendaraan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `warna` varchar(50) NOT NULL,
   `transmisi` varchar(50) NOT NULL,
   `jenisBensin` varchar(20) NOT NULL,
   `platNomor` varchar(20) NOT NULL,
   `jenisKendala` varchar(50) NOT NULL,
-  `totalHarga` int(20) NOT NULL,
+  `totalHarga` int NOT NULL,
   `tanggalPemesanan` datetime NOT NULL,
-  `jadwalBooking` date NOT NULL DEFAULT current_timestamp(),
+  `jadwalBooking` date DEFAULT NULL,
   `verifikasi` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_layanan`
 --
 
-INSERT INTO `tb_layanan` (`idLayanan`, `jenisLayanan`, `jenisService`, `namaPelanggan`, `noWA`, `alamat`, `provinsi`, `kota`, `kecamatan`, `desa`, `dusun`, `tipeKendaraan`, `kilometer`, `merk`, `seri`, `warna`, `transmisi`, `jenisBensin`, `platNomor`, `jenisKendala`, `totalHarga`, `tanggalPemesanan`, `jadwalBooking`, `verifikasi`) VALUES
-(1, 'Reguler', 'Ringan', 'nama saya', '092222222', 'jalan hayam muruk nomer 1234', 'Jatim', 'jember', 'pondok gede', 'indah', 'telengsari', 'matic', '203 kilometer', 'brio', 'osd 12393', 'Hijau', 'aki', 'solar', 'P 2933 RI', 'susah menyala', 0, '2022-06-12 00:00:00', '0000-00-00', 'Sudah Terverifikasi'),
-(2, 'Ditempat', 'Berat', 'nama saya', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'manual', '1203 kilometer', 'spioer', 'KAD 434', 'Abu-abu', 'asd', 'bio solar', 'DK 3293 K', ' tidak menyala', 0, '2022-06-12 00:00:00', '2022-06-06', ' ');
+INSERT INTO `tb_layanan` (`idLayanan`, `jenisLayanan`, `jenisService`, `namaPelanggan`, `noWA`, `alamat`, `provinsi`, `kota`, `kecamatan`, `desa`, `dusun`, `tipeKendaraan`, `kilometer`, `merkKendaraan`, `namaKendaraan`, `warna`, `transmisi`, `jenisBensin`, `platNomor`, `jenisKendala`, `totalHarga`, `tanggalPemesanan`, `jadwalBooking`, `verifikasi`) VALUES
+(8, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1', 'yamaha', 'vega', 'Hijau', 'd', '2w', 'L 12982 KW', 'dad', 0, '2022-07-03 00:00:00', NULL, 'Sudah Terverifikasi'),
+(9, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', 'd', 'yamaha', 'vega', 'Hijau', 'd', 'd', 'L 12982 KW', 'd', 0, '2022-07-03 00:00:00', NULL, 'Belum Terverifikasi'),
+(10, 'HomeService', '', 'Agung Prasetyo', '09847733', 'jalan hayam muruk nomer 123', '', 'Jember', 'Wuluhan', 'Ampel', 'Krajan', 'bebek', '1KM', 'yamaha', 'vega', 'Putih', 'de', 'Aftur', 'L 12982 KW', 'Cek hati', 0, '2022-07-03 00:00:00', NULL, 'Belum Terverifikasi'),
+(12, 'ServiceDibengkel', '', 'Dimyati Azhar', '09847733', 'jalan hayam muruk nomer 123', '', '', '', '', '', 'bebek', '1KM', 'yamaha', 'vega', 'Putih', 'manual', 'pertalie', 'L 12982 KW', ' Ganti Oli', 0, '2022-07-03 00:00:00', '2022-07-03', 'Sudah Dilayani');
 
 -- --------------------------------------------------------
 
@@ -144,7 +154,7 @@ CREATE TABLE `tb_midtrans` (
   `nama` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `order_id` varchar(20) NOT NULL,
-  `gross_amount` int(11) NOT NULL,
+  `gross_amount` int NOT NULL,
   `payment_type` varchar(50) NOT NULL,
   `transaction_time` varchar(50) NOT NULL,
   `bank` varchar(50) NOT NULL,
@@ -153,15 +163,33 @@ CREATE TABLE `tb_midtrans` (
   `status_code` varchar(5) NOT NULL,
   `noTelp` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_midtrans`
 --
 
 INSERT INTO `tb_midtrans` (`nama`, `alamat`, `order_id`, `gross_amount`, `payment_type`, `transaction_time`, `bank`, `va_number`, `pdf_url`, `status_code`, `noTelp`, `email`) VALUES
+('Agung Prasetyo', 'jalan hayam muruk nomer 123', '1302491688', 270000, 'bank_transfer', '2022-07-01 07:01:42', 'bca', '87933602073', 'https://app.sandbox.midtrans.com/snap/v1/transactions/cff723f6-ad78-4300-801e-5cf3d56fad74/pdf', '201', '09847733', 'agung@mail.com'),
 ('asd', 'asd', '186595092', 120000, 'bank_transfer', '2022-06-12 07:52:00', 'bca', '87933524039', 'https://app.sandbox.midtrans.com/snap/v1/transactions/bfa40037-3106-4162-8ae5-af6343b81cec/pdf', '201', '09394934', 'asdasd@gmail.com'),
+('Agung Prasetyo', 'jalan hayam muruk nomer 123', '1894139759', 480000, 'bank_transfer', '2022-07-01 07:19:02', 'bca', '87933720747', 'https://app.sandbox.midtrans.com/snap/v1/transactions/77005d47-bfe9-4603-92fc-58022ee01a04/pdf', '201', '09847733', 'agung@mail.com'),
+('Agung Prasetyo', 'jalan hayam muruk nomer 123', '305259713', 54000, 'bank_transfer', '2022-06-30 06:40:26', 'bca', '87933931832', 'https://app.sandbox.midtrans.com/snap/v1/transactions/bf6ad323-de9a-4b86-91cb-d0037755b579/pdf', '201', '09847733', 'agung@mail.com'),
+('Agung Prasetyo', 'jalan hayam muruk nomer 123', '387264444', 216000, 'bank_transfer', '2022-07-01 07:18:03', 'bca', '87933635254', 'https://app.sandbox.midtrans.com/snap/v1/transactions/6ac2ff91-0158-4f58-94e4-206895c619e3/pdf', '201', '09847733', 'agung@mail.com'),
+('Dimyati Azhar', 'jalan hayam muruk nomer 123', '585662114', 228000, 'bank_transfer', '2022-07-03 21:08:59', 'bca', '87933323830', 'https://app.sandbox.midtrans.com/snap/v1/transactions/9d0cbd5f-d325-474f-8525-91678abb4267/pdf', '201', '09847733', 'agung@mail.com'),
 ('Ahmad', 'jalan luduk ombo nomer 12', '77988668', 120000, 'bank_transfer', '2022-06-12 08:26:13', 'bca', '87933225864', 'https://app.sandbox.midtrans.com/snap/v1/transactions/4570d660-a690-4d7c-8563-d29a47a6acaf/pdf', '201', '09873839472', 'ahmadc4hy4@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_motor`
+--
+
+CREATE TABLE `tb_motor` (
+  `id` int NOT NULL,
+  `merk_motor` varchar(100) NOT NULL,
+  `type_motor` varchar(100) NOT NULL,
+  `plat_nomor` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -170,13 +198,13 @@ INSERT INTO `tb_midtrans` (`nama`, `alamat`, `order_id`, `gross_amount`, `paymen
 --
 
 CREATE TABLE `tb_pesanan` (
-  `idPesanan` int(11) NOT NULL,
-  `idInvoice` int(11) NOT NULL,
-  `idBarang` int(11) NOT NULL,
+  `idPesanan` int NOT NULL,
+  `idInvoice` int NOT NULL,
+  `idBarang` int NOT NULL,
   `namaBarang` varchar(50) NOT NULL,
-  `jumlah` tinyint(2) NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `jumlah` tinyint NOT NULL,
+  `harga` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_pesanan`
@@ -184,7 +212,14 @@ CREATE TABLE `tb_pesanan` (
 
 INSERT INTO `tb_pesanan` (`idPesanan`, `idInvoice`, `idBarang`, `namaBarang`, `jumlah`, `harga`) VALUES
 (3, 2, 1, 'barang 1', 1, 120000),
-(4, 3, 1, 'barang 1', 1, 120000);
+(4, 3, 1, 'barang 1', 1, 120000),
+(5, 4, 3, 'barang 2', 1, 54000),
+(6, 5, 3, 'barang 2', 5, 54000),
+(7, 6, 3, 'barang 2', 4, 54000),
+(8, 7, 1, 'barang 1', 4, 120000),
+(9, 8, 1, 'barang 1', 1, 120000),
+(10, 10, 3, 'barang 2', 2, 54000),
+(11, 10, 1, 'barang 1', 1, 120000);
 
 --
 -- Triggers `tb_pesanan`
@@ -204,23 +239,23 @@ DELIMITER ;
 --
 
 CREATE TABLE `tb_product` (
-  `idBarang` int(11) NOT NULL,
+  `idBarang` int NOT NULL,
   `namaBarang` varchar(50) NOT NULL,
   `namaSuplier` varchar(50) NOT NULL,
   `kategori` varchar(50) NOT NULL,
-  `harga` int(11) NOT NULL,
+  `harga` int NOT NULL,
   `keterangan` text NOT NULL,
-  `stok` int(11) NOT NULL,
+  `stok` int NOT NULL,
   `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_product`
 --
 
 INSERT INTO `tb_product` (`idBarang`, `namaBarang`, `namaSuplier`, `kategori`, `harga`, `keterangan`, `stok`, `gambar`) VALUES
-(1, 'barang 1', '', 'Benda Kecil', 120000, 'ini keterangan', 17, 'Sparepart_Dashboard.png'),
-(3, 'barang 2', '', 'Body Motor', 54000, 'ini body', 12, 'profile_page.jpg');
+(1, 'barang 1', '', 'Benda Kecil', 120000, 'ini keterangan', 11, 'Sparepart_Dashboard.png'),
+(3, 'barang 2', '', 'Body Motor', 54000, 'ini body', 18, 'profile_page.jpg');
 
 -- --------------------------------------------------------
 
@@ -229,17 +264,17 @@ INSERT INTO `tb_product` (`idBarang`, `namaBarang`, `namaSuplier`, `kategori`, `
 --
 
 CREATE TABLE `tb_tentang` (
-  `idTentang` int(11) NOT NULL,
+  `idTentang` int NOT NULL,
   `menuTentang` varchar(50) NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_tentang`
 --
 
 INSERT INTO `tb_tentang` (`idTentang`, `menuTentang`, `deskripsi`) VALUES
-(1, 'nama perusahaan', 'PT serbaBisa');
+(1, 'Berkah Abadi Motor', 'Melayani Service, Ganti Oli, Sparepart, dll');
 
 -- --------------------------------------------------------
 
@@ -248,7 +283,7 @@ INSERT INTO `tb_tentang` (`idTentang`, `menuTentang`, `deskripsi`) VALUES
 --
 
 CREATE TABLE `tb_user` (
-  `idUser` int(11) NOT NULL,
+  `idUser` int NOT NULL,
   `namaUser` varchar(50) NOT NULL,
   `namaPerusahaan` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
@@ -258,16 +293,26 @@ CREATE TABLE `tb_user` (
   `noTelp` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `sosialMedia` varchar(100) NOT NULL,
-  `roleId` tinyint(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `roleId` tinyint NOT NULL,
+  `id_motor` int NOT NULL,
+  `nama_motor` varchar(100) NOT NULL,
+  `merk_motor` varchar(100) NOT NULL,
+  `type_motor` varchar(100) NOT NULL,
+  `plat_nomor` varchar(100) NOT NULL,
+  `provinsi` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `kota` varchar(100) NOT NULL,
+  `desa` varchar(100) NOT NULL,
+  `dusun` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tb_user`
 --
 
-INSERT INTO `tb_user` (`idUser`, `namaUser`, `namaPerusahaan`, `username`, `password`, `alamat`, `deskripsi`, `noTelp`, `email`, `sosialMedia`, `roleId`) VALUES
-(1, 'user', '', 'user', 'asd', 'jalan hayam muruk nomer 123', '', '09847733', '', '', 2),
-(2, 'admin', '', 'admin', 'asd', 'jalan suabyo nomer 12', 'ini deskripsi', '094438394', 'iniemail@gmail.com', 'tidak ada', 1);
+INSERT INTO `tb_user` (`idUser`, `namaUser`, `namaPerusahaan`, `username`, `password`, `alamat`, `deskripsi`, `noTelp`, `email`, `sosialMedia`, `roleId`, `id_motor`, `nama_motor`, `merk_motor`, `type_motor`, `plat_nomor`, `provinsi`, `kecamatan`, `kota`, `desa`, `dusun`) VALUES
+(1, 'Dimyati Azhar', '', 'user', 'asd', 'jalan hayam muruk nomer 123', '', '09847733', 'agung@gmail.com', '', 2, 0, 'vega', 'yamaha', 'bebek', 'L 12982 KW', '', 'Wuluhan', 'Jember', 'Ampel', 'Krajan'),
+(2, 'Muhammad Ali Nur Awalul Azhar Putra', '', 'admin', 'asd', 'jalan suabyo nomer 12', 'ini deskripsi', '0857676983', 'admin@gmail.com', 'tidak ada', 1, 0, '0', '0', '0', '0', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -335,49 +380,49 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idInvoice` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tb_kasir`
 --
 ALTER TABLE `tb_kasir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_laporan`
 --
 ALTER TABLE `tb_laporan`
-  MODIFY `idLaporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idLaporan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
-  MODIFY `idLayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idLayanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_pesanan`
 --
 ALTER TABLE `tb_pesanan`
-  MODIFY `idPesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_product`
 --
 ALTER TABLE `tb_product`
-  MODIFY `idBarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idBarang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_tentang`
 --
 ALTER TABLE `tb_tentang`
-  MODIFY `idTentang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTentang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUser` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
