@@ -52,7 +52,7 @@
         <!-- Image Logo -->
         <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
         <!-- <a class="navbar-brand" href="index.html">C-MASH</a> -->
-        <h1><span class="turquoise">C</span>-MASH</h1>
+        <h3><span class="turquoise">C</span>-MASH</h1>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,8 +67,19 @@
                     <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Services</a>
+                    <a class="nav-link page-scroll" href="#Keunggulan">Keunggulan</a>
                 </li>
+                
+                <!-- Dropdown Menu -->          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#pricing">Pricing</a>
                 </li>
@@ -88,7 +99,7 @@
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    <a class="nav-link page-scroll" href="#contact">Kontak</a>
                 </li>
                 <li class="nav-item">
                     </li>
@@ -166,7 +177,14 @@
 
 
     <!-- Services -->
-    <div id="services" class="cards-1">
+    <div id="Keunggulan" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Mengapa Anda Memilih Kami ?</h2>
+                    <p class="p-heading p-large">Kami melayani dengan sepenuh hati. Kepuasan Anda adalah Kebahagian Kami.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
 
@@ -191,11 +209,9 @@
                         <img class="card-image" src="<?php echo base_url('/assets/img/clock.png')?>" alt="alternative">
                         <div class="card-body">
                             <h4 class="card-title">Waktu Pelayanan Kami:</h4>
-                            
-
-                            <p>Senin- Sabtu : 07.30 – 16.00</p>
-                            <p>Khusus Jumat : 07.30 – 10.30 buka kembali : 13.00 – 16.00</p>
-                           
+                            <p>Senin - Sabtu : 07.30 – 16.00</p>
+                            <p>Khusus Hari Jumat : 07.30 – 10.30,</p>
+                            <p>Buka Kembali : 13.00 – 16.00</p>
                         </div>
                     <!-- </div> -->
                     </div>
