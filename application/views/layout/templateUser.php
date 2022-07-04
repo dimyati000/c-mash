@@ -65,7 +65,7 @@
 							<a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Booking Service</span></a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a href="<?php echo base_url('Pelayanan/homeService') ?>" class="nav-link">Home Service</a></li>
-								<li class="nav-item"><a href="<?php echo base_url('Pelayanan/dibengkel') ?>" class="nav-link">Service Dibengkel</a></li>
+								<li class="nav-item"><a href="<?php echo base_url('Pelayanan/dibengkel') ?>" class="nav-link">Service Di bengkel</a></li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
@@ -82,12 +82,12 @@
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item">
-							<a href="<?php echo base_url('Home/tipsRawat') ?>" class="nav-link"><i class="fas fa-heart"></i><span>Tips Perawatan</span></a>
-						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
+							<a href="<?php echo base_url('Home/Perawatan') ?>" class="nav-link"><i class="fas fa-heart"></i><span>Tips Perawatan</span></a>
+						</li> -->
+						<!-- <li class="nav-item">
 							<a href="<?php echo base_url('Home/bantuan') ?>" class="nav-link"><i class="fas fa-info"></i><span>Tentang Kami</span></a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</nav>

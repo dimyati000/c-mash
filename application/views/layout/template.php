@@ -92,7 +92,7 @@
 							<a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-fire"></i> <span>Service</span></a>
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="<?php echo base_url('Pelayanan/homeService') ?>">Home Service</a></li>
-								<li><a class="nav-link" href="<?php echo base_url('Pelayanan/dibengkel') ?>">Service Dibengkel</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('Pelayanan/dibengkel') ?>">Service Di bengkel</a></li>
 							</ul>
 						</li>
 						<li><a class="nav-link" href="<?php echo base_url('User') ?>"><i class="fas fa-box"></i> <span>Produk</span></a></li>
@@ -105,8 +105,8 @@
 								<li><a class="nav-link" href="<?php echo base_url('Kategori/bendaKecil') ?>">Benda Kecil</a></li>
 							</ul>
 						</li>
-						<li><a class="nav-link" href="<?php echo base_url('Home/tipsRawat') ?>"><i class="fas fa-heart"></i> <span>Tips Perawatan</span></a></li>
-						<li><a class="nav-link" href="<?php echo base_url('Home/bantuan') ?>"><i class="fas fa-info"></i> <span>Bantuan</span></a></li>
+						<!-- <li><a class="nav-link" href="<?php echo base_url('Home/tipsRawat') ?>"><i class="fas fa-heart"></i> <span>Tips Perawatan</span></a></li> -->
+						<!-- <li><a class="nav-link" href="<?php echo base_url('Home/bantuan') ?>"><i class="fas fa-info"></i> <span>Bantuan</span></a></li> -->
 					</ul>
 				</aside>
 			</div>

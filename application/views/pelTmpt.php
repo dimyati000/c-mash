@@ -1,10 +1,11 @@
 <head>
-    <title>Service Dibengkel</title>
+    <title>Service Di bengkel</title>
 </head>
+
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h4>Service Dibengkel</h4>
+            <h4>Service Di bengkel</h4>
         </div>
         <?php echo $this->session->flashdata('pesan') ?>
         <div class="card-body">
