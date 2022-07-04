@@ -16,7 +16,8 @@
 						<div class="row justify-content-center">
               <div class="col-12 col-md-12 col-lg-6">
                 <div class="card">
-								<iframe src="<?php echo site_url() . '/Transaksi/detailview/' . $invoice->idInvoice ?>" style="width:100%; height:300px;"></iframe> 
+								<iframe src="<?php echo site_url() . '/Transaksi/cetak/' . $invoice->idInvoice ?>" style="width:100%; height:300px;"></iframe> 
+                <!-- <a id="kembali" href="<?php echo site_url('../Transaksi') ?>"><button>Kembali</button></a> -->
 								</div>
 							</div>
 						</div>

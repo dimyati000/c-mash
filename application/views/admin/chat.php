@@ -1,8 +1,22 @@
-<title>Kirim Pesan</title>
+<title>Penjadwalan</title>
+
+<body>
+	<div class="main-wrapper">
+		<!-- Main Content -->
+		<div class="main-content">
+			<section class="section">
+				<div class="section-header">
+					<h1>Penjadwalan</h1>
+					<div class="section-header-breadcrumb">
+						<div class="breadcrumb-item active"><a href="<?= site_url('Dashboard') ?>">Dashboard</a></div>
+						<div class="breadcrumb-item">Penjadwalan</div>
+					</div>
+				</div>
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<div class="main-content">
+<!-- <div class="main-content"> -->
 	<div class="container">
-		<div class="card shadow-lg border-0 rounded-lg mt-5">
+		<div class="card shadow-lg border-0 rounded-lg mt-50">
 			<section class="section">
 				<div class="section-header">
 					<h1>Kirim Pesan</h1>

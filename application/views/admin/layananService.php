@@ -1,4 +1,4 @@
-<title>Data Layanan Service</title>
+<title>Layanan Service</title>
 
 <body>
 	<div class="main-wrapper">

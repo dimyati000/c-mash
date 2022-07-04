@@ -78,7 +78,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url('Service')?>">Layanan Service</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('DataBarang') ?>">Spare Part </a></li>
-                <li><a class="nav-link" href="<?php echo base_url('Transaksi')?>">Transaksi</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('Transaksi')?>">Invoice</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('Pesan')?>">Penjadwalan</a></li>
                 <!-- <li><a class="nav-link" href="<?php echo base_url('Laporan')?>">Laporan</a></li> -->
                 <li><a class="nav-link" href="<?php echo base_url('Service/BookingService')?>">Verifikasi Booking</a></li>
@@ -98,7 +98,7 @@
                 <li><a class="nav-link" href="<?php echo base_url('Laporan/laporan_penjualan')?>">Laporan Penjualan</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo base_url() . 'Tentang'?>"><i class="fas fa-cog"></i><span>Setting</span></a></li>
+            <!-- <li><a href="<?php echo base_url() . 'Tentang'?>"><i class="fas fa-cog"></i><span>Setting</span></a></li> -->
           </ul>
         </aside>
       </div>

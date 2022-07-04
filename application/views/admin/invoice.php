@@ -1,10 +1,21 @@
-<title>Data Invoice</title>
-<div class="main-content">
-<div class="section-header">
+<title>Invoice</title>
+
+<body>
+	<div class="main-wrapper">
+		<!-- Main Content -->
+		<div class="main-content">
+			<section class="section">
+				<div class="section-header">
+					<h1>Invoice</h1>
+					<div class="section-header-breadcrumb">
+						<div class="breadcrumb-item active"><a href="<?= site_url('Dashboard') ?>">Dashboard</a></div>
+						<div class="breadcrumb-item">Invoice</div>
+					</div>
+				</div>
     
 <div class="container">
 		<div class="row justify-content-center">
-			<div class="card shadow-lg border-0 rounded-lg mt-5">
+			<div class="card shadow-lg border-0 rounded-lg mt-50">
     <section class="section">
         <div class="section-header">
             <h1>Invoice Pemesanan Produk</h1>

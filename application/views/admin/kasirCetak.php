@@ -1,146 +1,146 @@
-<title>Cetak Data Kasir</title>
+<?php
+  $path_logo = base_url('assets/img/bengkel1.png');
+  $type = pathinfo($path_logo, PATHINFO_EXTENSION);
+  $data = file_get_contents($path_logo);
+  $image_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+?>
 
-<div class="main-content">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="card shadow-lg border-0 rounded-lg mt-5">
-				<section class="section">
-					<div class="section-header">
-						<h1>Menu Kasir</h1>
-					</div>
-					<div class="section-body">
-						<div class="container-fluid">
-							<div class="card-body">
-								<!-- Tambah Kasir -->
-								<form id="cart" action="<?php echo base_url('Kasir/tambahData') ?>" method="post" autocomplete="off">
-									<div class="form-floating mb-3">
-										<input class="form-control" id="nama" name="nama" type="text" placeholder="Nama Pelanggan" minlength="3" maxlength="50" />
-									</div>
-									<div class="form-floating mb-3">
-										<input class="form-control" id="tanggal" name="tanggal" type="date" />
-									</div>
-									<div class="form-floating mb-3">
-										<input class="form-control" id="keterangan" name="keterangan" type="text" placeholder="Keterangan Akun" minlength="3" maxlength="50" />
-									</div>
 
-									<table id="cart datatablesSimple" class="table table-bordered table-striped">
+<!DOCTYPE html>
+<html>
 
-										<br>
-										<thead>
-											<tr>
-												<th>Nama Barang</th>
-												<th>Jumlah</th>
-												<th>Harga</th>
-												<th>Sub-Total</th>
-												<th>Ubah</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th style="text-align:center" colspan="4">-</th>
-												<th><button class="row-add btn btn-primary float-end"> Add </button></th>
-											</tr>
+<head>
+  <title><?=$title?></title>
+  <style>
+  .table {
+    border-collapse: collapse;
+    border-color: black;
+    font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+    width: 100%;
+  }
 
-											<tr class="line_items">
-												<td>
-													<input class="form-control" name="namaBarang" autocomplete="off" type="text" placeholder="Nama Barang" />
-												</td>
-												<td>
-													<input class="form-control" name="jumlah" type="text" placeholder="Jumlah" autocomplete="off" />
-												</td>
-												<td>
-													<input class="form-control" name="harga" type="text" placeholder="Harga" autocomplete="off" />
-												</td>
-												<td>
-													<input class="form-control" name="total" type="text" jAutoCalc="{jumlah} * {harga}" />
-												</td>
-												<td><button class="row-remove btn btn-danger">Delete</button></td>
-											</tr>
+  .head-table th {
+    padding: 10px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  }
 
-										</tbody>
-										<tfoot>
-											<tr>
-												<th>Total</th>
-												<th colspan="3">
-													<input class="form-control" name="sub_total" type="text" placeholder="Kredit" value="" jAutoCalc="SUM({total})" />
-												</th>
+  .body-table td,
+  th {
+    padding: 10px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+  }
 
-											</tr>
-											<tr>
-												<th>Bayar</th>
-												<th colspan="3">
-													<input type="text" class="form-control" name="bayar" placeholder="Bayar">
-												</th>
-											</tr>
-											<tr>
-												<th>Kembalian</th>
-												<th colspan="3">
-													<input class="form-control" name="kembalian" type="text" placeholder="kembalian" value=0 jAutoCalc="-{sub_total} + {bayar}" />
-												</th>
-											</tr>
-										</tfoot>
-										<br>
-									</table>
-									<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-										<button class="btn btn-warning" onclick="print()">Print</button>
-										<input type="submit" name="save" value="Simpan Data" class="btn btn-success">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-</div>
-<footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2022 C-Mash. All rights reserved.
-        </div>
-      </footer>
+  .head-lap td {
+    padding: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+  .text-center {
+    text-align: center;
+  }
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jautocalc@1.3.1/dist/jautocalc.js"></script>
-<script type="text/javascript">
-	$(function() {
+  .text-left {
+    text-align: left;
+  }
 
-		function autoCalcSetup() {
-			$('form#cart').jAutoCalc('destroy');
-			$('form#cart tr.line_items').jAutoCalc({
-				keyEventsFire: true,
-				decimalPlaces: 2,
-				emptyAsZero: true
-			});
-			$('form#cart').jAutoCalc({
-				decimalPlaces: 2
-			});
-		}
-		autoCalcSetup();
+  .text-right {
+    text-align: right;
+  }
 
-		$('button.row-remove').on("click", function(e) {
-			e.preventDefault();
+  .line-title {
+    border: 0;
+    border-style: inset;
+    border-top: 2px solid #000;
+  }
 
-			var form = $(this).parents('form')
-			$(this).parents('tr').remove();
-			autoCalcSetup();
+  .line-title-child {
+    border: 0;
+    margin-top: -7px;
+    border-top: 1px solid #000;
+  }
 
-		});
+  .page_break {
+    page-break-before: always;
+  }
 
-		$('button.row-add').on("click", function(e) {
-			e.preventDefault();
+  .kata-pengantar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+  }
+  </style>
+</head>
 
-			var $table = $(this).parents('table');
-			var $top = $table.find('tr.line_items').first();
-			var $new = $top.clone(true);
+<body>
+  <div style="margin:-25px;">
 
-			$new.jAutoCalc('destroy');
-			$new.insertBefore($top);
-			$new.find('input[type=text]').val('');
-			autoCalcSetup();
+    <table class="table" style="text-align:left;">
+      <tbody class="head-lap">
+        <tr>
+          <td width="20%">
+            <div style="width:200px;">
+              <img style="width:100%;" src="<?= $image_base64 ?>" alt="">
+            </div>
+          </td>
+          <td width="70%" class="text-center" colspan="2">
+            <span style="font-size:15px">LAPORAN DATA KASIR C-MASH</span> <br>
+            <span style="font-size:12px">Jl.Semeru No.36 Ajung Pancakarya, Kabupaten Jember, Jawa Timur</span> <br>
+            <span style="font-size:12px">Email : rahmahtiyas@gmail.com</a></span>
+            <span style="font-size:12px">Telepon : 082 221 337 795</span>
+          </td>
+          <td width="10%"></td>
+        </tr>
+      </tbody>
+    </table>
+    <hr class="line-title">
+    <hr class="line-title-child">
+		<br>
+    <!-- <p style="margin-top:35px;" class="kata-pengantar">Laporan Pelayanan Periode Tanggal :
+      <?= format_date($tanggal_awal, 'd/m/Y') ?> s/d <?= format_date($tanggal_akhir, 'd/m/Y') ?></p> -->
+    <table class="table">
+      <thead class="head-table">
+				<tr>
+					<th>No</th>
+					<th>Nama Pelanggan</th>
+					<th>Tanggal</th>
+					<th>Keterangan</th>
+					<th>Nama Barang</th>
+					<th>Total Harga</th>
+					<th>Bayar</th>
+					<th>Kembalian</th>
+					<!-- <th>Aksi</th> -->
+				</tr>
+      </thead>
+      <tbody class="body-table">
+				<?php
+					$no = 1;
+					foreach ($data_kasir as $ksr) : ?>
+						<tr>
+							<td><?php echo $no++ ?></td>
+							<td><?php echo $ksr->namaPelanggan ?></td>
+							<td><?php echo $ksr->tanggal ?></td>
+							<td><?php echo $ksr->keterangan ?></td>
+							<td><?php echo $ksr->namaBarang ?></td>
+							<?php $fixed = $ksr->kembalian . "000"; ?>
+							<td><?php echo number_format($ksr->bayar - $fixed) ?></td>
+							<td><?php echo number_format($ksr->bayar) ?></td>
+							<td><?php switch ($ksr->kembalian) {
+									case 0:
+										echo 0;
+										break;
+									default:
+										echo $ksr->kembalian . ',000';
+										break;
+								} ?></td>
+							<!-- <td><?php echo anchor('Kasir/delete/' . $ksr->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
+						</tr>
+					<?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+</body>
 
-		});
-
-	});
-</script>
+</html>

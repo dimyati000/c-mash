@@ -3,6 +3,9 @@
 		#cetak {
 			display: none;
 		}
+		#kembali {
+			display: none;
+		}
 	}
 
 </style>
@@ -53,6 +56,7 @@
 							<br>
 							<!-- <button class="btn"><a href="<?php echo base_url('Transaksi') ?>">Kembali</a></button> -->
 							<button id="cetak" onclick="window.print()" class="btn btn-primary">Cetak</button>
+							<!-- <a id="kembali" href="<?php echo site_url('../Transaksi') ?>"><button>Kembali</button></a> -->
 						</div>
 					</div>
 				</section>
